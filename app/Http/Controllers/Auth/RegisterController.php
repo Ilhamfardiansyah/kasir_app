@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -50,12 +51,23 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'nik' => ['required', 'string', 'max:8', 'min:8'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'confirmed'],
-            'level' => ['required', 'string']
+            'name' => 'required|string|max:255',
+            'nik' => 'required|string|max:8|min:8|unique:users',
+            'email' => 'required|string|email|max:255',
+            'image' => 'required|file|max:1024',
+            'password' => 'required|string|confirmed',
+            'level' => 'required|string'
         ]);
+         $image_ext = $image->getClientOriginalExtension();
+        //changing the name of the file
+        $new_image_name = rand(123456,999999).".".$image_ext;
+        $destination_path = public_path('/images');
+        $image->move($destination_path,$new_image_name);
+
+        //saving file in database
+        $user->image_name = $new_image_name;
+        $user->image_size = $image_size;
+        $user->save();
     }
 
     /**
@@ -70,8 +82,10 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'nik' => $data['nik'],
             'email' => $data['email'],
+            'image' => $data['image'],
             'password' => Hash::make($data['password']),
             'level' => $data['level']
         ]);
     }
 }
+
