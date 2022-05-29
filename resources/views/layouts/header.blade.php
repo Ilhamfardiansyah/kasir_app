@@ -27,9 +27,7 @@
                         </form>
                     </div>
                     <!--//app-search-box-->
-
                     <div class="app-utilities col-auto">
-
                         <!--//app-utility-item-->
                         <div class="app-utility-item">
                             <a href="settings.html" title="Settings"> {{ Auth::user()->name }},
