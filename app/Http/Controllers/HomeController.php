@@ -24,9 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.main', [
+        return view('index', [
             "title" => 'Home',
-            'users' => User::all()
+            // 'users' => User::all()
         ]);
     }
 }

@@ -1,4 +1,3 @@
-<header class="app-header fixed-top">
     <div class="app-header-inner">
         <div class="container-fluid py-2">
             <div class="app-header-content">
@@ -77,6 +76,3 @@
     <!--//container-fluid-->
     </div>
     <!--//app-header-inner-->
-    @include('layouts.navbar')
-    <!--//app-sidepanel-->
-</header>
