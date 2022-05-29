@@ -54,20 +54,10 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'nik' => 'required|string|max:8|min:8|unique:users',
             'email' => 'required|string|email|max:255',
-            'image' => 'required|file|max:1024',
             'password' => 'required|string|confirmed',
             'level' => 'required|string'
         ]);
-         $image_ext = $image->getClientOriginalExtension();
-        //changing the name of the file
-        $new_image_name = rand(123456,999999).".".$image_ext;
-        $destination_path = public_path('/images');
-        $image->move($destination_path,$new_image_name);
 
-        //saving file in database
-        $user->image_name = $new_image_name;
-        $user->image_size = $image_size;
-        $user->save();
     }
 
     /**
@@ -78,7 +68,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'nik' => $data['nik'],
             'email' => $data['email'],
@@ -86,6 +76,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'level' => $data['level']
         ]);
+        if (request()->hasFile('image')) {
+            $image = request()->file('image')->getClientOriginalName();
+            request()->file('image')->storeAs('images', '/'. $image, '');
+            $user->update(['image' => $image]);
+        }
+        return $user;
     }
 }
 

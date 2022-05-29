@@ -45,33 +45,38 @@
                             </a>
                         </div>
                         <!--//app-utility-item-->
-
                         <div class="app-utility-item app-user-dropdown dropdown">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                                    role="button" aria-expanded="false"><img src="assets/images/user.png"
-                                        alt="user profile"></a>
-                                <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                                    <li><a class="dropdown-item" href="account.html">Account</a></li>
-                                    <li><a class="dropdown-item" href="account.html">Account</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><button class="dropdown-item" id="logout-form">Log Out</button>
-                                    </li>
-                                </ul>
+                                <div class="temp">
+                                    <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown"
+                                        href="#" role="button" aria-expanded="false">
+                                        <span class="status bottomLeft">&nbsp</span>
+                                        <img class="avatar"
+                                            src="{{ asset('/storage/images/' . Auth::user()->image) }}"
+                                            alt="user profile">
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
+                                        <li><a class="dropdown-item" href="account.html">Account</a></li>
+                                        <li><a class="dropdown-item" href="account.html">Account</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><button class="dropdown-item" id="logout-form">Log Out</button>
+                                        </li>
+                                    </ul>
                             </form>
                         </div>
-                        <!--//app-user-dropdown-->
                     </div>
-                    <!--//app-utilities-->
+                    <!--//app-user-dropdown-->
                 </div>
-                <!--//row-->
+                <!--//app-utilities-->
             </div>
-            <!--//app-header-content-->
+            <!--//row-->
         </div>
-        <!--//container-fluid-->
+        <!--//app-header-content-->
+    </div>
+    <!--//container-fluid-->
     </div>
     <!--//app-header-inner-->
     @include('layouts.navbar')
