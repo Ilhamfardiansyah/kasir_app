@@ -26,4 +26,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard/index/', [MasterController::class, 'index']);
+Route::get('/barangbaru', [MasterController::class, 'index']);
