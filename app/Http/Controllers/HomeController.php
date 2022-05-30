@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Routing\Controller;
+use App\Models\Produk;
+
 
 class HomeController extends Controller
 {
@@ -26,6 +29,7 @@ class HomeController extends Controller
     {
         return view('index', [
             "title" => 'Home',
+            "produk" => Produk::all()
             // 'users' => User::all()
         ]);
     }

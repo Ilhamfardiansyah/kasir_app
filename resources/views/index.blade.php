@@ -77,40 +77,46 @@
                 <!--//col-->
             </div>
 
-
             <div class="row g-4 mb-4">
                 <div class="col-6 col-lg-12">
                     <div class="app-card app-card-stat shadow-sm h-100">
                         <table id="example">
                             <thead>
-                                <th>no</th>
-                                <th>no</th>
-                                <th>no</th>
-                                <th>no</th>
-                                <th>no</th>
-                            </thead>
-                            <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
+                                    <th class="text-center">Kode Produk</th>
+                                    <th class="text-center">Nama Produk</th>
+                                    <th class="text-center">Barcode</th>
+                                    <th class="text-center">Stok</th>
+                                    <th class="text-center">Harga Jual</th>
                                 </tr>
-                            </tbody>
+                            </thead>
+                            @foreach ($produk as $produks)
+                                <tbody>
+                                    <tr>
+                                        <td>{{ $produks->kode_produk }}</td>
+                                        <td>{{ $produks->nama_produk }}</td>
+                                        <td>{{ $produks->barcode }}</td>
+                                        <td>{{ $produks->stok }}</td>
+                                        <td>{{ $produks->harga_jual }}</td>
+                                    </tr>
+                                </tbody>
+                            @endforeach
                             <tfoot>
                                 <tr>
-                                    <th>isi</th>
-                                    <th>isi</th>
-                                    <th>isi</th>
-                                    <th>isi</th>
-                                    <th>isi</th>
+                                    <th class="text-center">Kode Produk</th>
+                                    <th class="text-center">Nama Produk</th>
+                                    <th class="text-center">Barcode</th>
+                                    <th class="text-center">Stok</th>
+                                    <th class="text-center">Harga Jual</th>
                                 </tr>
                             </tfoot>
                         </table>
+
                         <script>
                             $(document).ready(function() {
-                                $('#example').DataTable();
+                                $('#example').DataTable({
+                                    scrollx: true,
+                                });
                             });
                         </script>
                     </div>

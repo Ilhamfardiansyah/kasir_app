@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    <title>Baksa Warehouse</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -83,7 +83,7 @@
                             </div>
                             <div class="level mb-3">
                                 <label class="level" for="level"></label>
-                                <select name="level" id="" class="form-control">
+                                <select name="level" id="" class="form-select" aria-label="Default select example">
                                     <option value="#" hidden selected>--Pilih Level--</option>
                                     <option value="admin">Admin</option>
                                     <option value="kasir">Kasir</option>
