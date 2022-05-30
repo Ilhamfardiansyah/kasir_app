@@ -26,9 +26,9 @@
         <div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
             <div class="d-flex flex-column align-content-end">
                 <div class="app-auth-body mx-auto">
-                    <div class="app-auth-branding mb-4"><a class="app-logo" href="index.html"><img
-                                class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"></a></div>
-                    <h2 class="auth-heading text-center mb-4">Sign up to Portal</h2>
+                    <div class="app-auth-branding mb-4"><a class="app-logo" href="#"><img class="logo-icon me-2"
+                                src="{{ asset('img/logo.png') }}" alt="logo"></a></div>
+                    <h2 class="auth-heading text-center mb-4">Sign up to </h2>
 
                     <div class="auth-form-container text-start mx-auto">
                         <form class="auth-form auth-signup-form" method="POST" action="{{ route('register') }}"
@@ -150,6 +150,55 @@
             <!--//flex-column-->
         </div>
         <!--//auth-main-col-->
+        <script type="text/javascript">
+            window.onload = setInterval(clock, 1000);
+
+            function clock() {
+                var d = new Date();
+
+                var date = d.getDate();
+
+                var month = d.getMonth();
+                var montharr = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                month = montharr[month];
+
+                var year = d.getFullYear();
+
+                var day = d.getDay();
+                var dayarr = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+                day = dayarr[day];
+
+                var hour = d.getHours();
+                var min = d.getMinutes();
+                var sec = d.getSeconds();
+
+                document.getElementById("date").innerHTML = day + " " + date + " " + month + " " + year;
+                document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+            }
+        </script>
+        <style>
+            #date {
+                margin-top: 70px;
+                color: silver;
+                font-size: 20px;
+                border: 2px dashed #2E9AFE;
+                padding: 10px;
+                width: 190px;
+                margin-left: 250px;
+            }
+
+            #time {
+                margin-top: 20px;
+                font-size: 80px;
+                position: center;
+                color: silver;
+                border: 2px dashed #2E9AFE;
+                padding: 10px;
+                width: 320px;
+                margin-left: 190px;
+            }
+
+        </style>
         <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
             <div class="auth-background-holder">
             </div>
@@ -158,11 +207,8 @@
                 <div class="d-flex flex-column align-content-end h-100">
                     <div class="h-100"></div>
                     <div class="overlay-content p-3 p-lg-4 rounded">
-                        <h5 class="mb-3 overlay-title">Explore Portal Admin Template</h5>
-                        <div>Portal is a free Bootstrap 5 admin dashboard template. You can download and view the
-                            template license <a
-                                href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/">here</a>.
-                        </div>
+                        <p id="date"></p>
+                        <p id="time"></p>
                     </div>
                 </div>
             </div>
