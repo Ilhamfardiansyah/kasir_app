@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use Alert;
+use Illuminate\Routing\Controller;
+use App\Models\Suplaier;
 
 class MasterController extends Controller
 {
     public function index(){
         return view('dashboard.index', [
-            "title" => "Data Master"
+            "title" => "Data Master",
+            'suplaier' => Suplaier::all()
         ]);
     }
 

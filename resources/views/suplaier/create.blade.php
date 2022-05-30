@@ -4,14 +4,14 @@
     @include('sweetalert::alert')
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
-            <h1 class="app-page-title">Tambah Data Supplier</h1>
+            <h1 class="app-page-title">Tambah Data Supplaier</h1>
             <div class="row g-4 mb-4">
                 <div class="col-12 col-lg-6">
                     <div class="app-card app-card-chart h-100 shadow-sm">
                         <div class="app-card-header p-3">
                             <div class="row justify-content-between align-items-center">
                                 <div class="col-auto">
-                                    <h4 class="app-card-title">Tambah Data Supplier</h4>
+                                    <h4 class="app-card-title">Tambah Data Supplaier</h4>
                                 </div>
                                 <!--//col-->
 
@@ -22,7 +22,7 @@
                         <form action="/create/data" method="post">
                             @csrf
                             <div class="mt-4 mb-4 p-4 row">
-                                <label for="nama_supplier" class="col-sm-3 col-form-label">Nama Supplier</label>
+                                <label for="nama_supplier" class="col-sm-3 col-form-label">Nama Supplaier</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control @error('nama_supplier') is-invalid @enderror"
                                         name="nama_supplier" id="nama_supplier" value="{{ old('nama_supplier') }}">
@@ -77,7 +77,7 @@
                         <div class="app-card-header p-3">
                             <div class="row justify-content-between align-items-center">
                                 <div class="col-auto">
-                                    <h4 class="app-card-title">Data Supplier</h4>
+                                    <h4 class="app-card-title">Data Supplaier</h4>
                                 </div>
                                 <!--//col-->
 
@@ -89,8 +89,8 @@
                             <table id="example">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">Nama Supplier</th>
-                                        <th class="text-center">Kode Supplier</th>
+                                        <th class="text-center">Nama Supplaier</th>
+                                        <th class="text-center">Kode Supplaier</th>
                                         <th class="text-center">Alamat</th>
                                         <th class="text-center">No Telp</th>
                                     </tr>
@@ -107,8 +107,8 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th class="text-center">Nama Supplier</th>
-                                        <th class="text-center">Kode Supplier</th>
+                                        <th class="text-center">Nama Supplaier</th>
+                                        <th class="text-center">Kode Supplaier</th>
                                         <th class="text-center">Alamat</th>
                                         <th class="text-center">No Telp</th>
                                     </tr>
