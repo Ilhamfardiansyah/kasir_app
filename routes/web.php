@@ -28,6 +28,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/barangbaru', [MasterController::class, 'index'])->name('barangbaru');
+Route::post('/barangbaru/create', [MasterController::class, 'store']);
 Route::get('/suplaier', [SuplaierController::class, 'index'])->name('suplaier');
-Route::get('/create', [SuplaierController::class, 'create'])->name('create');
+Route::get('/create', [SuplaierController::class, 'create']);
 
