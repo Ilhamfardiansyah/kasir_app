@@ -30,7 +30,6 @@
             @include('layouts.navbar')
         </div>
     </div>
-
     <!--//app-sidepanel-->
 </header>
 
