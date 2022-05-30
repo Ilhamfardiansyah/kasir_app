@@ -30,5 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/barangbaru', [MasterController::class, 'index'])->name('barangbaru');
 Route::post('/barangbaru/create', [MasterController::class, 'store']);
 Route::get('/suplaier', [SuplaierController::class, 'index'])->name('suplaier');
-Route::get('/create', [SuplaierController::class, 'create']);
+Route::get('/create', [SuplaierController::class, 'create'])->name('inputcreate');
+Route::post('/create/data', [SuplaierController::class, 'store']);
+
 

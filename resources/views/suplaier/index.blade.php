@@ -91,13 +91,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>PT.dadadadd</td>
-                                    <td>1212154</td>
-                                    <td>jl cendana</td>
-                                    <td>021558412</td>
-                                    <td><a href="" class="btn btn-danger">Hapus</a></td>
-                                </tr>
+                                @foreach ($suplier as $supliers)
+                                    <tr>
+                                        <td>{{ $supliers->nama_supplier }}</td>
+                                        <td>{{ $supliers->kode_supplier }}</td>
+                                        <td>{{ $supliers->alamat }}</td>
+                                        <td>{{ $supliers->no_telp }}</td>
+                                        <td><a href="" class="btn btn-danger">Hapus</a></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>

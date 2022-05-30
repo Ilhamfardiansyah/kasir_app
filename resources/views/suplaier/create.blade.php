@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    @include('sweetalert::alert')
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <h1 class="app-page-title">Tambah Data Supplier</h1>
@@ -18,27 +19,51 @@
                             </div>
                             <!--//row-->
                         </div>
-                        <form action="" method="">
+                        <form action="/create/data" method="post">
                             @csrf
                             <div class="mt-4 mb-4 p-4 row">
-                                <label for="nama_produk" class="col-sm-3 col-form-label">Nama Supplier</label>
+                                <label for="nama_supplier" class="col-sm-3 col-form-label">Nama Supplier</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="nama_produk" id="nama_produk">
+                                    <input type="text" class="form-control @error('nama_supplier') is-invalid @enderror"
+                                        name="nama_supplier" id="nama_supplier" value="{{ old('nama_supplier') }}">
+                                    @error('nama_supplier')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
-                                <label for="kode_produk" class="col-sm-3 mt-2 mb col-form-label">Kode Supplier</label>
+                                <label for="kode_supplier" class="col-sm-3 mt-2 mb col-form-label">Kode Supplier</label>
                                 <div class="col-sm-9 mt-2">
-                                    <input type="text" class="form-control" name="kode_produk" id="kode_produk">
+                                    <input type="text" class="form-control  @error('kode_supplier') is-invalid @enderror"
+                                        name="kode_supplier" id="kode_supplier" value="{{ old('kode_supplier') }}">
+                                    @error('kode_supplier')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
-                                <label for="barcode" class="col-sm-3 mt-2 mb col-form-label">Alamat</label>
+                                <label for="alamat" class="col-sm-3 mt-2 mb col-form-label">Alamat</label>
                                 <div class="col-sm-9 mt-2">
-                                    <input type="text" class="form-control" name="barcode" id="barcode">
+                                    <input type="text" class="form-control  @error('alamat') is-invalid @enderror"
+                                        name="alamat" id="alamat" value="{{ old('alamat') }}">
+                                    @error('alamat')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
-                                <label for="stok" class="col-sm-3 mt-2 mb col-form-label">No Telp</label>
+                                <label for="no_telp" class="col-sm-3 mt-2 mb col-form-label">No Telp</label>
                                 <div class="col-sm-9 mt-2">
-                                    <input type="text" class="form-control" name="stok" id="stok" onkeyup="sum();">
+                                    <input type="text" class="form-control @error('no_telp') is-invalid @enderror"
+                                        name="no_telp" id="no_telp" onkeyup="sum();" value="{{ old('no_telp') }}">
+                                    @error('no_telp')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <button type="submit" class="btn btn-success mt-5">Simpan</button>
                             </div>
@@ -64,29 +89,28 @@
                             <table id="example">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">Kode Produk</th>
-                                        <th class="text-center">Nama Produk</th>
-                                        <th class="text-center">Barcode</th>
-                                        <th class="text-center">Stok</th>
-                                        <th class="text-center">Harga Jual</th>
+                                        <th class="text-center">Nama Supplier</th>
+                                        <th class="text-center">Kode Supplier</th>
+                                        <th class="text-center">Alamat</th>
+                                        <th class="text-center">No Telp</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>121</td>
-                                        <td>121</td>
-                                        <td>121</td>
-                                        <td>121</td>
-                                        <td>121</td>
-                                    </tr>
+                                    @foreach ($suplier as $supliers)
+                                        <tr>
+                                            <td class="text-center">{{ $supliers->nama_supplier }}</td>
+                                            <td class="text-center">{{ $supliers->kode_supplier }}</td>
+                                            <td class="text-center">{{ $supliers->alamat }}</td>
+                                            <td class="text-center">{{ $supliers->no_telp }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th class="text-center">Kode Produk</th>
-                                        <th class="text-center">Nama Produk</th>
-                                        <th class="text-center">Barcode</th>
-                                        <th class="text-center">Stok</th>
-                                        <th class="text-center">Harga Jual</th>
+                                        <th class="text-center">Nama Supplier</th>
+                                        <th class="text-center">Kode Supplier</th>
+                                        <th class="text-center">Alamat</th>
+                                        <th class="text-center">No Telp</th>
                                     </tr>
                                 </tfoot>
                             </table>

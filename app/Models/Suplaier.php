@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Suplaier extends Model
 {
     use HasFactory;
-    protected $guarded = [""]
+    protected $guarded = [""];
 
-    public function produk(){
+    public function produks()
+    {
         return $this->hasMany(Produk::class);
     }
 }
