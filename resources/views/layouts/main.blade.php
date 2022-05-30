@@ -17,6 +17,10 @@
     <script src="{{ asset('js/tables.js') }}"></script>
     <script defer src="{{ asset('assets/plugins/fontawesome/js/all.min.js') }}"></script>
     {{-- Data table --}}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
     {{-- <script src="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></script> --}}
     <script src="stylesheet" href="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -26,12 +30,12 @@
 </head>
 <header class="app-header fixed-top">
 
-    @include('layouts.header')
+    @include('partials.header')
     <!--//app-header-->
     <div id=" app-sidepanel" class="app-sidepanel">
         <div id="sidepanel-drop" class="sidepanel-drop"></div>
         <div class="sidepanel-inner d-flex flex-column">
-            @include('layouts.navbar')
+            @include('partials.navbar')
         </div>
     </div>
     <!--//app-sidepanel-->

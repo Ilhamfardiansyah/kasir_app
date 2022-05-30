@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SuplaierController;
 
 
 /*
@@ -25,5 +27,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/barangbaru', [MasterController::class, 'index'])->name('barangbaru');
+Route::get('/suplaier', [SuplaierController::class, 'index'])->name('suplaier');
+Route::get('/create', [SuplaierController::class, 'create'])->name('create');
 
-Route::get('/barangbaru', [MasterController::class, 'index']);

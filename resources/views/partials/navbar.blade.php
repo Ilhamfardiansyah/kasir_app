@@ -106,7 +106,7 @@
                             d="M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z" />
                     </svg>
                 </span>
-                <span class="nav-link-text">External</span>
+                <span class="nav-link-text">Supplier</span>
                 <span class="submenu-arrow">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -119,13 +119,12 @@
             <!--//nav-link-->
             <div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
                 <ul class="submenu-list list-unstyled">
-                    <li class="submenu-item"><a class="submenu-link" href="login.html">Login</a>
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('suplaier') ? 'active' : '' }}"
+                            href="{{ url('/suplaier') }}">Data Suplaier</a>
                     </li>
-                    <li class="submenu-item"><a class="submenu-link" href="signup.html">Signup</a>
-                    </li>
-                    <li class="submenu-item"><a class="submenu-link" href="reset-password.html">Reset
-                            password</a></li>
-                    <li class="submenu-item"><a class="submenu-link" href="404.html">404 page</a>
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('create') ? 'active' : '' }}"
+                            href="{{ url('/create') }}">Tambah
+                            Supplier</a>
                     </li>
                 </ul>
             </div>

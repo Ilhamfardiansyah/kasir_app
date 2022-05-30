@@ -1,5 +1,9 @@
 @extends('layouts.main')
 @section('content')
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <h1 class="app-page-title">Dashboard</h1>
@@ -79,31 +83,29 @@
                         <table id="example">
                             <thead>
                                 <tr>
-                                    <th class="text-center">Kode Produk</th>
-                                    <th class="text-center">Nama Produk</th>
-                                    <th class="text-center">Barcode</th>
-                                    <th class="text-center">Stok</th>
-                                    <th class="text-center">Harga Jual</th>
+                                    <th class="text-center">Nama Supplier</th>
+                                    <th class="text-center">Kode Supplier</th>
+                                    <th class="text-center">Alamat</th>
+                                    <th class="text-center">No Telp</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
-                            @foreach ($produk as $produks)
-                                <tbody>
-                                    <tr>
-                                        <td>{{ $produks->kode_produk }}</td>
-                                        <td>{{ $produks->nama_produk }}</td>
-                                        <td>{{ $produks->barcode }}</td>
-                                        <td>{{ $produks->stok }}</td>
-                                        <td>{{ $produks->harga_jual }}</td>
-                                    </tr>
-                                </tbody>
-                            @endforeach
+                            <tbody>
+                                <tr>
+                                    <td>PT.dadadadd</td>
+                                    <td>1212154</td>
+                                    <td>jl cendana</td>
+                                    <td>021558412</td>
+                                    <td><a href="" class="btn btn-danger">Hapus</a></td>
+                                </tr>
+                            </tbody>
                             <tfoot>
                                 <tr>
-                                    <th class="text-center">Kode Produk</th>
-                                    <th class="text-center">Nama Produk</th>
-                                    <th class="text-center">Barcode</th>
-                                    <th class="text-center">Stok</th>
-                                    <th class="text-center">Harga Jual</th>
+                                    <th class="text-center">Nama Supplier</th>
+                                    <th class="text-center">Kode Supplier</th>
+                                    <th class="text-center">Alamat</th>
+                                    <th class="text-center">No Telp</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </tfoot>
                         </table>
