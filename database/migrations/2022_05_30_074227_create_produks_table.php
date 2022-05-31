@@ -17,6 +17,7 @@ class CreateProduksTable extends Migration
             $table->id();
             $table->foreignId('suplaier_id');
             $table->foreignId('user_id');
+            $table->string('no_invoice')->nullable();
             $table->string('nama_produk');
             $table->string('kode_produk')->unique();
             $table->string('barcode')->unique();

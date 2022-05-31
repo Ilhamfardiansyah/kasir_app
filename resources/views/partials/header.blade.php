@@ -59,8 +59,7 @@
                                         alt="user profile">
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                                    <li><a class="dropdown-item" href="account.html">Account</a></li>
-                                    <li><a class="dropdown-item" href="account.html">Account</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('/account') }}">My Proffile</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

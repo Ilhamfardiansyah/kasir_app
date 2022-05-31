@@ -87,8 +87,8 @@
                     </li>
                     <li class="submenu-item"><a class="submenu-link" href="account.html">Barang Keluar</a>
                     </li>
-                    <li class="submenu-item"><a href="{{ url('/barangbaru') }}"
-                            class="submenu-link {{ Request::is('barangbaru') ? 'active' : '' }}">Input Barang
+                    <li class="submenu-item"><a href="{{ url('/inputbarangbaru') }}"
+                            class="submenu-link {{ Request::is('inputbarangbaru') ? 'active' : '' }}">Input Barang
                             Baru</a></li>
                 </ul>
             </div>
