@@ -9,6 +9,7 @@ class Suplaier extends Model
 {
     use HasFactory;
     protected $guarded = [""];
+    protected $table = 'suplaiers';
 
     public function produks()
     {

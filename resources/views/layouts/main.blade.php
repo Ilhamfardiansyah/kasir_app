@@ -14,21 +14,19 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- FontAwesome JS-->
-    <script src="{{ asset('js/tables.js') }}"></script>
     <script defer src="{{ asset('assets/plugins/fontawesome/js/all.min.js') }}"></script>
     {{-- Data table --}}
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
     {{-- <script src="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></script> --}}
     <script src="stylesheet" href="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ asset('assets/css/portal.css') }}">
+    <script src="{{ asset('js/tables.js') }}"></script>
 
 </head>
-<header class="app-header fixed-top">
+<header class="app-header fixed-top noprint">
 
     @include('partials.header')
     <!--//app-header-->
@@ -51,7 +49,7 @@
         <footer class="app-footer">
             <div class="container text-center py-3">
                 <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-                <small class="copyright">Designed with <i class="fas fa-    " style="color: #fb866a;"></i>
+                <small class="copyright">Designed with <i class="fas fa-truck" style="color: #fb866a;"></i>
                     by
                     Bakas Warehouse</small>
             </div>

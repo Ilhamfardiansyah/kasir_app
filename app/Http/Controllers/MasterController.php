@@ -33,19 +33,46 @@ class MasterController extends Controller
         $validateData = $request->validate([
             'nama_produk' => 'required',
             'suplaier_id' => 'required',
-            'user_id' => 'max:255',
             'no_invoice' => 'required',
             'kode_produk' => 'required|unique:produks',
             'barcode' => 'required|unique:produks',
             'stok' => 'required',
             'harga_jual' => 'required',
             'harga_beli' => 'required',
-            'total_harga' => 'required'
         ]);
-        // dd($validateData);
 
-        Produk::create($validateData);
+        $nama_produk = $request->nama_produk;
+        $suplaier_id = $request->suplaier_id;
+        // dd($suplaier_id);
+        $user_id = $request->user_id;
+        $no_invoice = $request->no_invoice;
+        $kode_produk = $request->kode_produk;
+        $barcode = $request->barcode;
+        $stok = $request->stok;
+        $harga_jual = $request->harga_jual;
+        $harga_beli = $request->harga_beli;
+        $title = 'Print Invoice';
+        $data = $request->created_at;
+        $nama_suplaier = Suplaier::where('id', $suplaier_id)->first()->value('nama_supplier');
+        $total_harga = (int) $stok * (int) $harga_beli;
+
+        // dd($suplaier);
+
+        Produk::create([
+            'nama_produk' => $nama_produk,
+            'suplaier_id' => $suplaier_id,
+            'user_id' => $user_id,
+            'no_invoice' => $no_invoice,
+            'kode_produk' => $kode_produk,
+            'barcode' => $barcode,
+            'stok' => $stok,
+            'harga_jual' => $harga_jual,
+            'harga_beli' => $harga_beli,
+            'total_harga'=> $total_harga
+        ]);
+        return view('print.index', compact('nama_produk', 'suplaier_id', 'user_id', 'no_invoice', 'kode_produk', 'barcode', 'stok', 'harga_jual', 'harga_beli', 'total_harga' ,'title', 'data', 'nama_suplaier'));
         toast('Barang baru sudah ditambahkan','success');
-        return redirect('/inputbarangbaru');
     }
 }
+
+
