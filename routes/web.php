@@ -35,5 +35,10 @@ Route::get('/suplaier', [SuplaierController::class, 'index'])->name('suplaier');
 Route::get('/create', [SuplaierController::class, 'create'])->name('inputcreate');
 Route::post('/create/data', [SuplaierController::class, 'store']);
 Route::get('/account', [AccountController::class, 'index'])->name('account');
+Route::get('/update', [MasterController::class, 'edit']);
+Route::post('/updatebarang', [MasterController::class, 'update']);
+
+
+
 
 

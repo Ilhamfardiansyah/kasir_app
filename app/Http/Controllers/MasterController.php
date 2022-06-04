@@ -73,6 +73,22 @@ class MasterController extends Controller
         return view('print.index', compact('nama_produk', 'suplaier_id', 'user_id', 'no_invoice', 'kode_produk', 'barcode', 'stok', 'harga_jual', 'harga_beli', 'total_harga' ,'title', 'data', 'nama_suplaier'));
         toast('Barang baru sudah ditambahkan','success');
     }
+
+    public function edit(){
+        return view('dashboard.input', [
+            'title' => 'Input Produk'
+        ]);
+    }
+
+    public function update(Request $request){
+       $tes = Produk::where('barcode', $request->barcode)->first();
+        // dd($tes->stok+$request->stok);
+        Produk::where('barcode', $request->barcode)
+            ->update([
+                'stok' => $tes->stok+$request->stok,
+            ]);
+                return back();
+    }
 }
 
 

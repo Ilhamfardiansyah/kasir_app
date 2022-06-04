@@ -55,7 +55,7 @@ function sum() {
     var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
     const format = result.toString().split('').reverse().join('');
     const convert = format.match(/\d{1,3}/g);
-    const rupiah = convert.join('.').split('').reverse().join('')
+    const rupiah = 'Rp ' + convert.join('.').split('').reverse().join('')
     if (!isNaN(result)) {
         var total = document.getElementById('total_harga').value = rupiah;
     }

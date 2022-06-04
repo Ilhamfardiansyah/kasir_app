@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Routing\Controller;
 use App\Models\Produk;
+use App\Models\Suplaier;
+
 
 
 class HomeController extends Controller
@@ -29,7 +31,8 @@ class HomeController extends Controller
     {
         return view('index', [
             "title" => 'Home',
-            "produk" => Produk::all()
+            "produk" => Produk::all(),
+            "suplier" => Suplaier::all()
             // 'users' => User::all()
         ]);
     }
