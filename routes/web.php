@@ -20,7 +20,7 @@ use App\Http\Controllers\AccountController;
 */
 
 Route::get('/', function () {
-    return view('test', [
+    return view('auth.login', [
         'title' => 'Home'
     ]);
 });

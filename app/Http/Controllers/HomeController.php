@@ -32,8 +32,8 @@ class HomeController extends Controller
         return view('index', [
             "title" => 'Home',
             "produk" => Produk::all(),
-            "suplier" => Suplaier::all()
-            // 'users' => User::all()
+            "suplier" => Suplaier::all(),
+                        // 'users' => User::all()
         ]);
     }
 }

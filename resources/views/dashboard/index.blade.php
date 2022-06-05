@@ -103,15 +103,15 @@
 
                                 <label for="suplaier_id" class="col-sm-3 mt-2 mb col-form-label">Supplier</label>
                                 <div class="col-sm-9 mt-2">
-                                    @foreach ($suplier as $suplaiers)
-                                        <select type="input" class="form-select" aria-label="Default select example"
-                                            id="suplaier_id" name="suplaier_id" required>
-                                            <option value="" selected disabled>--Pilih Supplier--
-                                            </option>
+                                    <select type="input" class="form-select" aria-label="Default select example"
+                                        id="suplaier_id" name="suplaier_id" required>
+                                        <option value="" selected disabled>--Pilih Supplier--
+                                        </option>
+                                        @foreach ($suplier as $suplaiers)
                                             <option value="{{ $suplaiers->id }}">
                                                 {{ $suplaiers->nama_supplier }}
                                             </option>
-                                    @endforeach
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -223,6 +223,3 @@
         </div>
     </div>
 @endsection
-
-
-<h1>ILham Fardiansyah</h1>
