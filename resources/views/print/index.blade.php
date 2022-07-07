@@ -199,7 +199,6 @@
             visibility: hidden;
         }
     }
-
 </style>
 
 @section('content')
@@ -244,9 +243,9 @@
                     <div class="col-10">
                         <div class="row bb pb-3">
                             <div class="col-7">
-                                <p class="address"> 777 Brockton Avenue, <br> Abington MA 2351, <br>Vestavia Hills AL
+                                <p class="address"> Villa Nusa Indah, <br> Jl.Cempaka 1 Blok Q, <br>13 No.1 Jatiasih Bekasi
                                 </p>
-                                <div class="txn mt-2">TXN: XXXXXXX</div>
+                                <div class="txn mt-2">(021) 89190800</div>
                             </div>
                             <div class="col-5">
                                 <p>Nama,</p>

@@ -29,7 +29,7 @@
                     <div class="app-card app-card-stat shadow-sm h-100">
                         <div class="app-card-body p-3 p-lg-4">
                             <h4 class="stats-type mb-1">Produk</h4>
-                            <div class="stats-figure">{{ $produk->sum('id') }}</div>
+                            <div class="stats-figure">{{ $jml_produk }}</div>
                             <div class="stats-meta text-success">
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                     <div class="app-card app-card-stat shadow-sm h-100">
                         <div class="app-card-body p-3 p-lg-4">
                             <h4 class="stats-type mb-1">User</h4>
-                            <div class="stats-figure">{{ Auth::user()->sum('id') }}</div>
+                            <div class="stats-figure">{{ $jml_user }}</div>
                         </div>
                         <!--//app-card-body-->
                         <a class="app-card-link-mask" href="#"></a>
@@ -55,7 +55,7 @@
                     <div class="app-card app-card-stat shadow-sm h-100">
                         <div class="app-card-body p-3 p-lg-4">
                             <h4 class="stats-type mb-1">Supplier</h4>
-                            <div class="stats-figure">{{ $suplier->sum('id') }}</div>
+                            <div class="stats-figure">{{ $jml_supplier }}</div>
                         </div>
                         <!--//app-card-body-->
                         <a class="app-card-link-mask" href="#"></a>

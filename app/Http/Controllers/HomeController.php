@@ -33,6 +33,9 @@ class HomeController extends Controller
             "title" => 'Home',
             "produk" => Produk::all(),
             "suplier" => Suplaier::all(),
+            "jml_produk" => Produk::count(),
+            "jml_supplier" => Suplaier::count(),
+            "jml_user" => User::count()
                         // 'users' => User::all()
         ]);
     }

@@ -27,8 +27,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::middleware('role:admin')->get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware('admin')->get('/barangbaru', [MasterController::class, 'index'])->name('barangbaru');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/barangbaru', [MasterController::class, 'index'])->name('barangbaru');
 Route::get('/inputbarangbaru', [MasterController::class, 'create'])->name('inputbarangbaru');
 Route::post('/barangbaru/create', [MasterController::class, 'store']);
 Route::get('/suplaier', [SuplaierController::class, 'index'])->name('suplaier');
