@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\Suplaier;
+use App\Models\Produk;
+use App\Models\User;
 use Alert;
 
 class SuplaierController extends Controller
@@ -12,7 +14,11 @@ class SuplaierController extends Controller
     public function index(){
         return view('suplaier.index', [
             'title' => 'Data Supplier',
-            'suplier' => Suplaier::all()
+            'suplier' => Suplaier::all(),
+            'produk' => Produk::all(),
+            'jml_produk' => Produk::count(),
+            'jml_user' => User::count(),
+            'jml_supplier' => Suplaier::count()
         ]);
     }
 

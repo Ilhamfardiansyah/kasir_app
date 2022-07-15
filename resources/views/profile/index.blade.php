@@ -38,7 +38,8 @@
                                         <div class="col-auto">
                                             <div class="item-label mb-2"><strong>Photo</strong></div>
                                             <div class="item-data"><img class="profile"
-                                                    src="{{ '/storage/images/' . Auth::user()->image }}" alt=""></div>
+                                                    src="{{ '/storage/images/' . Auth::user()->image }}" alt=""
+                                                    width="150px"></div>
                                         </div>
                                     </div>
                                     <!--//row-->

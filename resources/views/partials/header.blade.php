@@ -43,7 +43,7 @@
                         <div class="temp">
                             <div class="app-utility-item">
                                 <a href="#" title="Settings"> {{ Auth::user()->name }},
-                                    {{ Auth::user()->level }}
+                                    {{ Auth::user()->nik }}
                                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                 </a>
                             </div>
@@ -52,10 +52,9 @@
                         <div class="app-utility-item app-user-dropdown dropdown">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                                    role="button" aria-expanded="false">
-                                    <img class="avatar"
-                                        src="{{ asset('/storage/images/' . Auth::user()->image) }}"
+                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown"
+                                    href="#" role="button" aria-expanded="false">
+                                    <img class="avatar" src="{{ asset('/storage/images/' . Auth::user()->image) }}"
                                         alt="user profile">
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
