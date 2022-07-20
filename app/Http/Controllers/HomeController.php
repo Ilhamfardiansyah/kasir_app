@@ -29,14 +29,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index', [
+        $data = [
             "title" => 'Home',
             "produk" => Produk::all(),
             "suplier" => Suplaier::all(),
             "jml_produk" => Produk::count(),
             "jml_supplier" => Suplaier::count(),
             "jml_user" => User::count()
-                        // 'users' => User::all()
-        ]);
+            ];
+
+        if (auth()->user()->hasRole('kasir')) {
+		return view('dashboards.kasir', $data);
+	    }
+	    if (auth()->user()->hasRole('admin')) {
+		return view('dashboards.admin', $data);
+	    }
+	return view('dashboards.role_not_found');
+        // return view('index', [
+
+        //                 // 'users' => User::all()
+        // ]);
     }
 }

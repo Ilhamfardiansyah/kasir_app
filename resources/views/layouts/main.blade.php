@@ -28,7 +28,12 @@
     <div id=" app-sidepanel" class="app-sidepanel">
         <div id="sidepanel-drop" class="sidepanel-drop"></div>
         <div class="sidepanel-inner d-flex flex-column">
-            @include('partials.navbar')
+            @role('admin')
+                @include('partials.navbar_admin')
+            @endrole
+            @role('kasir')
+                @include('partials.navbar_kasir')
+            @endrole
         </div>
     </div>
     <!--//app-sidepanel-->

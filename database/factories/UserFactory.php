@@ -17,7 +17,7 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'nik' => $this->faker->unique()->nik(),
-            'email' => $this->faker->unique()->safeEmail(),
+            'email' => $this->faker->safeEmail(),
             'image' => $this->faker->image(),
             'level' => $this->faker->level(),
             'email_verified_at' => now(),

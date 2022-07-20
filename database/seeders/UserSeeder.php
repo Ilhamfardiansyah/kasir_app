@@ -21,17 +21,15 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345'),
             'image' => 'user2-160x160'
         ]);
-
         $admin->assignRole('admin');
 
-         $user = User::create([
+        $user = User::create([
             'name' => 'ahmad zakaria',
             'nik' => '15128448',
             'email' => 'user@gmail.com',
             'password' => bcrypt('12345'),
             'image' => 'user2-160x160'
         ]);
-
         $user->assignRole('kasir');
 
     }
