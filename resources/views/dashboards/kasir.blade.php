@@ -6,7 +6,7 @@
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
-            <h1 class="app-page-title">Dashboard Kasi</h1>
+            <h1 class="app-page-title">Dashboard Kasir</h1>
 
             <div class="row g-4 mb-4">
                 <div class="col-6 col-lg-3">
