@@ -6,7 +6,7 @@ use App\Http\Controllers\MasterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuplaierController;
 use App\Http\Controllers\AccountController;
-
+use App\Http\Controllers\SizeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,9 @@ use App\Http\Controllers\AccountController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/tes' ,function(){
+    return view('tes');
+});
 
 Route::get('/', function () {
     return view('auth.login', [
@@ -37,6 +40,8 @@ Route::post('/create/data', [SuplaierController::class, 'store']);
 Route::get('/account', [AccountController::class, 'index'])->name('account');
 Route::get('/update', [MasterController::class, 'edit']);
 Route::post('/updatebarang', [MasterController::class, 'update']);
+Route::get('/size', [SizeController::class, 'index'])->name('size');
+
 
 
 

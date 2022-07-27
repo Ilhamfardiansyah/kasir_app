@@ -315,7 +315,7 @@
                                         <td>Rp. {{ number_format($total_harga, 0, ',', '.') }}</td>
                                     </tr>
                                 </tfoot>
-                            </table>
+                            </table>4
 
                             <!-- Signature -->
                             <div class="col-12">

@@ -69,7 +69,7 @@
                             d="M6 0h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1H4a2 2 0 0 1 2-2z" />
                     </svg>
                 </span>
-                <span class="nav-link-text">Master</span>
+                <span class="nav-link-text">Data Barang</span>
                 <span class="submenu-arrow">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -107,7 +107,7 @@
                             d="M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z" />
                     </svg>
                 </span>
-                <span class="nav-link-text">Supplaier</span>
+                <span class="nav-link-text">Supplier</span>
                 <span class="submenu-arrow">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -123,15 +123,53 @@
                     <li class="submenu-item"><a class="submenu-link {{ Request::is('suplaier') ? 'active' : '' }}"
                             href="{{ url('/suplaier') }}">Data Suplaier</a>
                     </li>
-                    <li class="submenu-item"><a class="submenu-link {{ Request::is('create') ? 'active' : '' }}"
-                            href="{{ url('/create') }}">Tambah
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('#') ? 'active' : '' }}"
+                            href="{{ url('/#') }}">Tambah
                             Supplier</a>
                     </li>
                 </ul>
             </div>
         </li>
         <!--//nav-item-->
-
+        <!--//nav-item-->
+        <li class="nav-item has-submenu">
+            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+            <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-3"
+                aria-expanded="false" aria-controls="submenu-3">
+                <span class="nav-icon">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-clipboard-data" viewBox="0 0 16 16">
+                        <path
+                            d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
+                        <path
+                            d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                        <path
+                            d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                    </svg>
+                </span>
+                <span class="nav-link-text">Data Master</span>
+                <span class="submenu-arrow">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </span>
+                <!--//submenu-arrow-->
+            </a>
+            <!--//nav-link-->
+            <div id="submenu-3" class="collapse submenu submenu-3" data-bs-parent="#menu-accordion">
+                <ul class="submenu-list list-unstyled">
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('/sizes') ? 'active' : '' }}"
+                            href="{{ url('/size') }}">Size</a>
+                    </li>
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('#') ? 'active' : '' }}"
+                            href="{{ url('/#') }}">Kategori</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
 
         <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->

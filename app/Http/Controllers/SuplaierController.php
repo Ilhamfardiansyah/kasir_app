@@ -22,11 +22,12 @@ class SuplaierController extends Controller
         ]);
     }
 
-    public function create(){
-        return view('suplaier.create', [
-            'title' => 'Tambah Data Suplaier',
-            'suplier' => Suplaier::all()
-        ]);
+       public function create(){
+        $title = 'Tambah Data Supplier';
+        $suplier = Suplaier::all();
+        $last = Suplaier::count();
+        $kd_supplier =  'SUPP'. '0'. $last. '-'. date('dgis');
+        return view('suplaier.create', compact('title', 'suplier', 'last', 'kd_supplier'));
     }
 
     public function store(Request $request){
@@ -37,7 +38,7 @@ class SuplaierController extends Controller
             'no_telp' => 'required'
         ]);
         Suplaier::create($validateData);
-        toast('Your Post as been submited!','success');
+        toast('Data Supplier Berhasil Ditambahkan!!','success');
         return redirect('/create');
     }
 }

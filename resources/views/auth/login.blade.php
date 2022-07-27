@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html manifest="cache.manifest">
 <html lang="en">
 
 <head>
@@ -30,13 +30,15 @@
                                 class="logo-icon me-2" src="{{ asset('img/logo.png') }}" alt="logo"></a></div>
                     <h2 class="auth-heading text-center mb-5">Log in to Warehouse</h2>
                     <div class="auth-form-container text-start">
-                        <form class="auth-form login-form" method="POST" action="{{ route('login') }}">
+                        <form class="auth-form login-form" method="POST" action="{{ route('login') }}"
+                            autocomplete="off">
                             @csrf
                             <div class="email mb-3">
                                 <label class="sr-only" for="signin-email">Email</label>
-                                <input id="nik" type="nik" class="form-control @error('nik') is-invalid @enderror"
-                                    name="nik" value="{{ old('nik') }}" required autocomplete="nik"
-                                    placeholder="Nik Karyawan" autofocus>
+                                <input id="nik" type="nik"
+                                    class="form-control @error('nik') is-invalid @enderror" name="nik"
+                                    value="{{ old('nik') }}" required autocomplete="off" placeholder="Nik Karyawan"
+                                    autofocus>
 
                                 @error('nik')
                                     <span class="invalid-feedback" role="alert">
@@ -49,7 +51,7 @@
                                 <label class="sr-only" for="signin-password">Password</label>
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="current-password" placeholder="Password">
+                                    required autocomplete="off" placeholder="Password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

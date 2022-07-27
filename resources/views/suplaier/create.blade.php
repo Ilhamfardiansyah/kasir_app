@@ -1,6 +1,10 @@
 @extends('layouts.main')
 
 @section('content')
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
     @include('sweetalert::alert')
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
@@ -25,7 +29,8 @@
                                 <label for="nama_supplier" class="col-sm-3 col-form-label">Nama Supplaier</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control @error('nama_supplier') is-invalid @enderror"
-                                        name="nama_supplier" id="nama_supplier" value="{{ old('nama_supplier') }}">
+                                        name="nama_supplier" id="nama_supplier" value="{{ old('nama_supplier') }}"
+                                        autocomplete="off">
                                     @error('nama_supplier')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -36,7 +41,8 @@
                                 <label for="kode_supplier" class="col-sm-3 mt-2 mb col-form-label">Kode Supplier</label>
                                 <div class="col-sm-9 mt-2">
                                     <input type="text" class="form-control  @error('kode_supplier') is-invalid @enderror"
-                                        name="kode_supplier" id="kode_supplier" value="{{ old('kode_supplier') }}">
+                                        name="kode_supplier" id="kode_supplier" value="{{ $kd_supplier }}"
+                                        autocomplete="off" readonly>
                                     @error('kode_supplier')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -47,7 +53,7 @@
                                 <label for="alamat" class="col-sm-3 mt-2 mb col-form-label">Alamat</label>
                                 <div class="col-sm-9 mt-2">
                                     <input type="text" class="form-control  @error('alamat') is-invalid @enderror"
-                                        name="alamat" id="alamat" value="{{ old('alamat') }}">
+                                        name="alamat" id="alamat" value="{{ old('alamat') }}" autocomplete="off">
                                     @error('alamat')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -57,8 +63,9 @@
 
                                 <label for="no_telp" class="col-sm-3 mt-2 mb col-form-label">No Telp</label>
                                 <div class="col-sm-9 mt-2">
-                                    <input type="text" class="form-control @error('no_telp') is-invalid @enderror"
-                                        name="no_telp" id="no_telp" onkeyup="sum();" value="{{ old('no_telp') }}">
+                                    <input type="number" class="form-control @error('no_telp') is-invalid @enderror"
+                                        name="no_telp" id="no_telp" onkeyup="sum();" value="{{ old('no_telp') }}"
+                                        autocomplete="off">
                                     @error('no_telp')
                                         <div class="invalid-feedback">
                                             {{ $message }}

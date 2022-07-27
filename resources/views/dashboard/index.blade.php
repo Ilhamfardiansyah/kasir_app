@@ -3,7 +3,6 @@
     textarea {
         background: cyan;
     }
-
 </style>
 
 <script>
@@ -33,8 +32,8 @@
                         <div class="mt-4 mb-4 p-4 row">
                             <label for="no_invoice" class="col-sm-4 col-form-label"><b>No Invoice</b></label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control mb-2 text-center" name="no_invoice" id="no_invoice"
-                                    value="{{ $invoice }}" readonly>
+                                <input type="text" class="form-control mb-2 text-center" name="no_invoice"
+                                    id="no_invoice" value="{{ $invoice }}" readonly>
                             </div>
                             <label for="user_id" class="col-sm-4 col-form-label"><b>Input By : </b>
                                 {{ Auth::user()->name }}, {{ Auth::user()->nik }}</label>
@@ -51,7 +50,7 @@
                             <div class="app-card-header p-3">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-auto">
-                                        <h4 class="app-card-title">Tambah Produk Dari Supplaier</h4>
+                                        <h4 class="app-card-title">Tambah Produk Dari Supplier</h4>
                                     </div>
                                 </div>
                             </div>
@@ -81,8 +80,9 @@
 
                                 <label for="barcode" class="col-sm-3 mt-2 mb col-form-label">Barcode</label>
                                 <div class="col-sm-9 mt-2">
-                                    <input type="text" class="form-control bg-body @error('barcode') is-invalid @enderror"
-                                        name="barcode" id="barcode" value="{{ $barcode }}" readonly>
+                                    <input type="text"
+                                        class="form-control bg-body @error('barcode') is-invalid @enderror" name="barcode"
+                                        id="barcode" value="{{ $barcode }}" readonly>
                                     @error('barcode')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -92,8 +92,8 @@
 
                                 <label for="stok" class="col-sm-3 mt-2 mb col-form-label">Stok</label>
                                 <div class="col-sm-9 mt-2">
-                                    <input type="text" class="form-control @error('stok') is-invalid @enderror" name="stok"
-                                        id="stok" value="{{ old('stok') }}" autocomplete="off">
+                                    <input type="text" class="form-control @error('stok') is-invalid @enderror"
+                                        name="stok" id="stok" value="{{ old('stok') }}" autocomplete="off">
                                     @error('stok')
                                         <div class="invalid-feedback">
                                             {{ $message }}
