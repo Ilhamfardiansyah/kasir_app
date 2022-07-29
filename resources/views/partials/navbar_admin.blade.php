@@ -123,8 +123,8 @@
                     <li class="submenu-item"><a class="submenu-link {{ Request::is('suplaier') ? 'active' : '' }}"
                             href="{{ url('/suplaier') }}">Data Suplaier</a>
                     </li>
-                    <li class="submenu-item"><a class="submenu-link {{ Request::is('#') ? 'active' : '' }}"
-                            href="{{ url('/#') }}">Tambah
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('create') ? 'active' : '' }}"
+                            href="{{ url('/create') }}">Tambah
                             Supplier</a>
                     </li>
                 </ul>
