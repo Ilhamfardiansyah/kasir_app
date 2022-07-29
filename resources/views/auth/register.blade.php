@@ -36,9 +36,10 @@
                             @csrf
                             <div class="name mb-3">
                                 <label class="sr-only" for="name">Your Name</label>
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" required autocomplete="name"
-                                    placeholder="Nama Lengkap" autofocus>
+                                <input id="name" type="text"
+                                    class="form-control @error('name') is-invalid @enderror" name="name"
+                                    value="{{ old('name') }}" required autocomplete="name" placeholder="Nama Lengkap"
+                                    autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -48,9 +49,9 @@
                             </div>
                             <div class="nik mb-3">
                                 <label class="sr-only" for="nik"></label>
-                                <input id="nik" type="text" class="form-control @error('nik') is-invalid @enderror"
-                                    name="nik" value="{{ old('nik') }}" required autocomplete="nik"
-                                    placeholder="NIK Karyawan">
+                                <input id="nik" type="text"
+                                    class="form-control @error('nik') is-invalid @enderror" name="nik"
+                                    value="{{ old('nik') }}" required autocomplete="nik" placeholder="NIK Karyawan">
 
                                 @error('nik')
                                     <span class="invalid-feedback" role="alert">
@@ -60,9 +61,9 @@
                             </div>
                             <div class="email mb-3">
                                 <label class="sr-only" for="signup-email"></label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email"
-                                    placeholder="Email">
+                                <input id="email" type="email"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -82,8 +83,9 @@
                                 @enderror
                             </div>
                             <div class="level mb-3">
-                                <label class="level" for="level"></label>
-                                <select name="level" id="" class="form-select" aria-label="Default select example">
+                                <label class="roles" for="roles"></label>
+                                <select name="roles" id="roles" class="form-select"
+                                    aria-label="Default select example">
                                     <option value="#" hidden selected>--Pilih Level--</option>
                                     <option value="admin">Admin</option>
                                     <option value="kasir">Kasir</option>
@@ -109,9 +111,11 @@
                             </div>
                             <div class="extra mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="RememberPassword">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="RememberPassword">
                                     <label class="form-check-label" for="RememberPassword">
-                                        I agree to Portal's <a href="#" class="app-link">Terms of Service</a> and
+                                        I agree to Portal's <a href="#" class="app-link">Terms of Service</a>
+                                        and
                                         <a href="#" class="app-link">Privacy Policy</a>.
                                     </label>
                                 </div>
@@ -138,9 +142,9 @@
                 <footer class="app-auth-footer">
                     <div class="container text-center py-3">
                         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-                        <small class="copyright">Designed with <i class="fas fa-heart"
-                                style="color: #fb866a;"></i> by <a class="app-link"
-                                href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for
+                        <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i>
+                            by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying
+                                Riley</a> for
                             developers</small>
 
                     </div>
@@ -197,7 +201,6 @@
                 width: 320px;
                 margin-left: 190px;
             }
-
         </style>
         <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
             <div class="auth-background-holder">
