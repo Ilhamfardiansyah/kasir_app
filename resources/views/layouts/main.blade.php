@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="description" content="Bakas - Warehouse">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
     <link rel="shortcut icon" href="favicon.ico">
@@ -19,6 +20,8 @@
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ asset('assets/css/portal.css') }}">
     <script src="{{ asset('js/tables.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </head>
 <header class="app-header fixed-top noprint">
@@ -65,13 +68,20 @@
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Charts JS -->
-    <script src="assets/plugins/chart.js/chart.min.js"></script>
-    <script src="assets/js/index-charts.js"></script>
+    {{-- <script src="assets/plugins/chart.js/chart.min.js"></script>
+    <script src="assets/js/index-charts.js"></script> --}}
 
 
 
     <!-- Page Specific JS -->
     <script src="assets/js/app.js"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 
 </body>
 

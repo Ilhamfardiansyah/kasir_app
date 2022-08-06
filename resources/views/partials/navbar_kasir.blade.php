@@ -39,9 +39,7 @@
             </a>
             <!--//nav-link-->
         </li>
-<<<<<<< HEAD
         <!--//nav-item-->
-=======
         <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
             <a class="nav-link" href="charts.html">
@@ -58,7 +56,6 @@
         </li>
         <!--//nav-item-->
 
->>>>>>> b0a6503c3d9b36fa131d45d33881c5e47f61a402
         <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
             <a class="nav-link" href="help.html">

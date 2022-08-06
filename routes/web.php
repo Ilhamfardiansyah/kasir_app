@@ -33,6 +33,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/barangbaru', [MasterController::class, 'index'])->name('barangbaru');
 Route::get('/inputbarangbaru', [MasterController::class, 'create'])->name('inputbarangbaru');
+Route::get('/tabletambah', [AddTableController::class, 'create'])->name('tabletambah');
 Route::post('/barangbaru/create', [MasterController::class, 'store']);
 Route::get('/suplaier', [SuplaierController::class, 'index'])->name('suplaier');
 Route::get('/create', [SuplaierController::class, 'create'])->name('inputcreate');
@@ -41,6 +42,7 @@ Route::get('/account', [AccountController::class, 'index'])->name('account');
 Route::get('/update', [MasterController::class, 'edit']);
 Route::post('/updatebarang', [MasterController::class, 'update']);
 Route::get('/size', [SizeController::class, 'index'])->name('size');
+Route::get('/print', [MasterController::class, 'print']);
 
 
 

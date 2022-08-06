@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class AddTableController extends Controller
+{
+     public function create(){
+        $last = Produk::count();
+        $title = 'Data Master';
+        $suplier = Suplaier::all();
+        $invoice ='Invoice'.':'. '00'. $last. date('dM-Y');
+        $kode_barang = 'B'. '000' . $last;
+        $barcode = '000045825'. $last;
+        $produk = Produk::with('suplaier');
+        return view ('dashboard.index', compact('invoice', 'produk', 'title', 'suplier', 'kode_barang', 'barcode'));
+    }
+}

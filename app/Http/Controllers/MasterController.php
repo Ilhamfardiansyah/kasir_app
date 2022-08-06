@@ -7,6 +7,7 @@ use App\Models\Produk;
 use Alert;
 use Illuminate\Routing\Controller;
 use App\Models\Suplaier;
+use Auth;
 
 
 class MasterController extends Controller
@@ -19,11 +20,16 @@ class MasterController extends Controller
     }
 
     public function create(){
-        $last = Produk::count();
+        $last = Produk::groupBy('kode_produk')->get();
+        if(count($last) == 0){
+            $last = 1;
+        }else {
+            $last = count($last) + 1;
+        }
         $title = 'Data Master';
         $suplier = Suplaier::all();
-        $invoice ='Invoice'.':'. '00'. $last. date('dM-Y');
-        $kode_barang = 'B'. '000' . $last;
+        $invoice ='Invoice:000' . $last. date('dM-Y');
+        $kode_barang = 'B000'. $last;
         $barcode = '000045825'. $last;
         $produk = Produk::with('suplaier');
         return view ('dashboard.index', compact('invoice', 'produk', 'title', 'suplier', 'kode_barang', 'barcode'));
@@ -44,7 +50,7 @@ class MasterController extends Controller
         $nama_produk = $request->nama_produk;
         $suplaier_id = $request->suplaier_id;
         // dd($suplaier_id);
-        $user_id = $request->user_id;
+        $user_id = Auth::user()->id;
         $no_invoice = $request->no_invoice;
         $kode_produk = $request->kode_produk;
         $barcode = $request->barcode;
@@ -55,8 +61,6 @@ class MasterController extends Controller
         $data = $request->created_at;
         $nama_suplaier = Suplaier::where('id', $suplaier_id)->first()->value('nama_supplier');
         $total_harga = (int) $stok * (int) $harga_beli;
-
-        // dd($suplaier);
 
         Produk::create([
             'nama_produk' => $nama_produk,
@@ -70,8 +74,33 @@ class MasterController extends Controller
             'harga_beli' => $harga_beli,
             'total_harga'=> $total_harga
         ]);
-        return view('print.index', compact('nama_produk', 'suplaier_id', 'user_id', 'no_invoice', 'kode_produk', 'barcode', 'stok', 'harga_jual', 'harga_beli', 'total_harga' ,'title', 'data', 'nama_suplaier'));
-        toast('Barang baru sudah ditambahkan','success');
+
+        $last = Produk::groupBy('kode_produk')->get();
+        if(count($last) == 0){
+            $last = 1;
+        }else {
+            $last = count($last) + 1;
+        }
+        $title = 'Data Master';
+        $invoice ='Invoice:000' . date('dM-Y');
+        $kode_barang = 'B000'. $last;
+        $barcode = '000045825'. $last;
+        return response()->json([
+            'status' => 'ok',
+            'data' =>  [
+                'invoice' => $invoice,
+                'kode_barang' => $kode_barang,
+                'barcode' => $barcode,
+            ]
+        ]);
+
+    }
+
+    public function print()
+    {
+        $title = 'Print Invoice';
+        $data = Produk::whereDate('created_at', date('Y-m-d'))->get();
+        return view('print.index', compact('data', 'title'));
     }
 
     public function edit(){
