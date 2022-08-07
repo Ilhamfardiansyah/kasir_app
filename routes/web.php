@@ -18,8 +18,8 @@ use App\Http\Controllers\SizeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/tes' ,function(){
-    return view('tes');
+Route::get('/register' ,function(){
+    return view('auth.register');
 });
 
 Route::get('/', function () {
@@ -43,6 +43,9 @@ Route::get('/update', [MasterController::class, 'edit']);
 Route::post('/updatebarang', [MasterController::class, 'update']);
 Route::get('/size', [SizeController::class, 'index'])->name('size');
 Route::get('/print', [MasterController::class, 'print']);
+Route::get('/printbulan', [MasterController::class, 'printmonth']);
+Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profile_karyawan');
+
 
 
 

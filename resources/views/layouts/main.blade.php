@@ -12,7 +12,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="description" content="Bakas - Warehouse">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/images/background/logo.png') }}">
 
     <!-- FontAwesome JS-->
     <script defer src="{{ asset('assets/plugins/fontawesome/js/all.min.js') }}"></script>

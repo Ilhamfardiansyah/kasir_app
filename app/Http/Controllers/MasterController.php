@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
-use Alert;
 use Illuminate\Routing\Controller;
 use App\Models\Suplaier;
 use Auth;
+use Alert;
 
 
 class MasterController extends Controller
@@ -28,7 +28,7 @@ class MasterController extends Controller
         }
         $title = 'Data Master';
         $suplier = Suplaier::all();
-        $invoice ='Invoice:000' . $last. date('dM-Y');
+        $invoice ='Invoice:000'. $last. date('GisdMY');
         $kode_barang = 'B000'. $last;
         $barcode = '000045825'. $last;
         $produk = Produk::with('suplaier');
@@ -82,7 +82,7 @@ class MasterController extends Controller
             $last = count($last) + 1;
         }
         $title = 'Data Master';
-        $invoice ='Invoice:000' . date('dM-Y');
+        $invoice ='Invoice:000' . date('GdM-Y');
         $kode_barang = 'B000'. $last;
         $barcode = '000045825'. $last;
         return response()->json([
@@ -98,9 +98,26 @@ class MasterController extends Controller
 
     public function print()
     {
-        $title = 'Print Invoice';
         $data = Produk::whereDate('created_at', date('Y-m-d'))->get();
-        return view('print.index', compact('data', 'title'));
+        if(count($data)==0) {
+            Alert::warning('Data untuk hari ini tidak ditemukan', 'silahkan tunggu setelah transaksi masuk');
+            return back();
+        }else{
+            $title = 'Print Invoice';
+            return view('print.index', compact('data', 'title'));
+        }
+    }
+
+    public function printmonth()
+    {
+        $data = Produk::whereMonth('created_at', date('m'))->get();
+        if(count($data)==0){
+            Alert::warning('Data untuk bulan ini tidak ditemukan', 'silahkan tunggu setelah transaksi masuk');
+            return back();
+        }else{
+            $title = 'Print Invoice';
+            return view('print.bulan', compact('data', 'title'));
+        }
     }
 
     public function edit(){

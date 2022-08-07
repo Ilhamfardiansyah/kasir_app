@@ -1,6 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </head>
+    @include('sweetalert::alert')
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <div class="container">
         <div class="row">
             <div class="span4">
@@ -13,16 +20,8 @@
                 </address>
             </div>
             <div class="span4 well">
-                <table class="invoice-head">
+                <table class="invoice-head" id>
                     <tbody>
-                        <tr>
-                            <td class="pull-right"><strong>Phone #</strong></td>
-                            <td>(021) 89190800</td>
-                        </tr>
-                        <tr>
-                            <td class="pull-right"><strong>Invoice #</strong></td>
-                            <td>{{ $data[0]->no_invoice ?? '-' }}</td>
-                        </tr>
                         <tr>
                             <td class="pull-right"><strong>Date</strong></td>
                             <td>{{ $data[0]->created_at }}</td>
@@ -39,52 +38,63 @@
         </div>
         <div class="row">
             <div class="span8 well invoice-body">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Kode Produk</th>
-                            <th>Quantity</th>
-                            <th>Barcode</th>
-                            <th>Purchase Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($data as $item)
+                <div id="table_wrapper">
+                    <table class="table table-bordered" id="list">
+                        <thead>
                             <tr>
-                                <td>{{ $item->nama_produk }}</td>
-                                <td>{{ $item->kode_produk }}</td>
-                                <td>{{ $item->stok }}</td>
-                                <td>{{ $item->barcode }}</td>
-                                <td>Rp. {{ number_format($item->harga_beli, 0, ',', '.') }}</td>
+                                <th>Product</th>
+                                <th>Kode Produk</th>
+                                <th>No Invoice</th>
+                                <th>Quantity</th>
+                                <th>Barcode</th>
+                                <th>Nama Supplier</th>
+                                <th>Kode Supplier</th>
+                                <th>Purchase Price</th>
                             </tr>
-                        @endforeach
-                        {{-- <tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $item)
+                                <tr>
+                                    <td>{{ $item->nama_produk }}</td>
+                                    <td>{{ $item->kode_produk }}</td>
+                                    <td>{{ $item->no_invoice }}</td>
+                                    <td>{{ $item->stok }}</td>
+                                    <td>{{ $item->barcode }}</td>
+                                    <td>{{ $item->suplaier->nama_supplier }}</td>
+                                    <td>{{ $item->suplaier->kode_supplier }}</td>
+                                    <td>Rp. {{ number_format($item->harga_beli, 0, ',', '.') }}</td>
+                                </tr>
+                            @endforeach
+                            {{-- <tr>
                             <td colspan="4"></td>
                         </tr> --}}
-                        <tr>
-                            <td colspan="3">&nbsp;</td>
-                            <td><strong>Total</strong></td>
-                            <td><strong>{{ number_format($data->sum('harga_beli'), 0, ',', '.') }}</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
+                            <tr>
+                                <td colspan="6">&nbsp;</td>
+                                <td><strong>Total</strong></td>
+                                <td><strong>Rp. {{ number_format($data->sum('harga_beli'), 0, ',', '.') }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="span8 well invoice-thank">
-                <h5 style="text-align:left;">PIC :</h5>
+                <h5 style="text-align:right">PIC :</h5>
             </div>
         </div>
         <div class="row">
             <div class="span8 well invoice-thank">
-                <h5 style="text-align:left;">{{ Auth::user()->name }}</h5>
+                <h5 style="text-align:right">{{ Auth::user()->name }}</h5>
             </div>
         </div>
         <div class="row">
             <div class="span8 well invoice-thank">
-                <h5 style="text-align:left;">{{ Auth::user()->nik }}</h5>
+                <h5 style="text-align:right">{{ Auth::user()->nik }}</h5>
             </div>
+        </div>
+        <div class="btn-group noprint" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary" onclick="window.print();">Print</button>
         </div>
         <br>
         <br>
@@ -95,13 +105,10 @@
 
         <div class="row">
             <div class="span3">
-                <strong>Phone:</strong>+91-124-111111
+                <strong>Phone:</strong>(021) 89190800
             </div>
             <div class="span3">
-                <strong>Email:</strong> <a href="web@webivorous.com">web@webivorous.com</a>
-            </div>
-            <div class="span3">
-                <strong>Website:</strong> <a href="http://webivorous.com">http://webivorous.com</a>
+                <strong>Email:</strong> <a> {{ Auth::user()->email }}</a>
             </div>
         </div>
     </div>

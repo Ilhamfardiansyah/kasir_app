@@ -119,22 +119,22 @@
                                             if (response.status == 'ok') {
                                                 $('#example tbody').append(`
                                                     <tr>
-                                                        <td>
+                                                        <td class="text-center">
                                                             ${kode_produk}
                                                         </td>
-                                                        <td>
+                                                        <td class="text-center">
                                                             ${nama_produk}
                                                         </td>
-                                                        <td>
+                                                        <td class="text-center">
                                                             ${barcode}
                                                         </td>
-                                                        <td>
+                                                        <td class="text-center">
                                                             ${stok}
                                                         </td>
-                                                        <td>
+                                                        <td class="text-center">
                                                             ${harga_jual}
                                                         </td>
-                                                        <td>
+                                                        <td class="text-center">
                                                             ${harga_beli}
                                                         </td>
                                                     </tr>`)

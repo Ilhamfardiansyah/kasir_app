@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'nik' => '15128447',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345'),
-            'image' => '2c8e3a4e1d7311d7fbd7fd4cef5871eb.jpg'
+            'image' => 'user-1.jpg'
         ]);
         $admin->assignRole('admin');
 
@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             'nik' => '15128448',
             'email' => 'user@gmail.com',
             'password' => bcrypt('12345'),
-            'image' => 'user2-160x160'
+            'image' => 'user-2.jpg'
         ]);
         $user->assignRole('kasir');
 

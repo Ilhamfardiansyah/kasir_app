@@ -18,7 +18,7 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'nik' => $this->faker->unique()->nik(),
             'email' => $this->faker->safeEmail(),
-            'image' => $this->faker->image(),
+            'image' => $this->faker->image(storage_path('public\storage\images'),50,50,null,false),
             'level' => $this->faker->level(),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

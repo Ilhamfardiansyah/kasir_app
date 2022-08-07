@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -66,7 +67,7 @@
             </div>
 
             <div class="row g-4 mb-4">
-                <div class="col-6 col-lg-12">
+                <div class="col-6 col-lg-12 card">
                     <div class="app-card app-card-stat shadow-sm h-100">
                         <table id="example1">
                             <thead>
@@ -99,19 +100,19 @@
                                 </tr>
                             </tfoot>
                         </table>
-                        <script>
-                            $(document).ready(function() {
-                                var table = $('#example1').DataTable();
-
-                                $('#example tbody').on('click', 'tr', function() {
-                                    var data = table.row(this).data();
-                                    alert('You clicked on ' + data[0] + "'s row");
-                                });
-                            });
-                        </script>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            var table = $('#example1').DataTable();
+
+            $('#example tbody').on('click', 'tr', function() {
+                var data = table.row(this).data();
+                alert('You clicked on ' + data[0] + "'s row");
+            });
+        });
+    </script>
 @endsection

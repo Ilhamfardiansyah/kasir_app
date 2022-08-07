@@ -39,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'nik' => 'required|string|max:8|min:8|unique:users',
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|confirmed',
-            'level' => 'required|string'
+            'roles' => 'required|string'
         ]);
 
     }
@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'image' => $data['image'],
             'password' => Hash::make($data['password']),
-            'level' => $data['level']
+            'roles' => $data['roles']
         ]);
         if (request()->hasFile('image')) {
             $image = request()->file('image')->getClientOriginalName();

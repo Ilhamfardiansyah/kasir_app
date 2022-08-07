@@ -17,11 +17,7 @@
                                 <div class="col-auto">
                                     <h4 class="app-card-title">Tambah Data Supplaier</h4>
                                 </div>
-                                <!--//col-->
-
-                                <!--//col-->
                             </div>
-                            <!--//row-->
                         </div>
                         <form action="/create/data" method="post">
                             @csrf
