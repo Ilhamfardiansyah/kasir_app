@@ -82,30 +82,20 @@
                                         <div class="col-auto">
                                             <div class="item-label"><strong>Level</strong></div>
                                             <div class="item-data">
-                                                {{ Auth::user()->level }}
+                                                {{ Auth::user()->getRoleNames()[0] }}
                                             </div>
                                         </div>
                                     </div>
-                                    <!--//row-->
                                 </div>
-                                <!--//item-->
                             </div>
-                            <!--//app-card-body-->
                             <div class="app-card-footer p-4 mt-auto">
                                 <a class="btn app-btn-secondary" href="#">Manage Profile</a>
                             </div>
-                            <!--//app-card-footer-->
-
                         </div>
-                        <!--//app-card-->
                     </div>
                 </div>
-                <!--//row-->
-
             </div>
-            <!--//container-fluid-->
         </div>
-        <!--//app-content-->
 
         <footer class="app-footer">
             <div class="container text-center py-3">

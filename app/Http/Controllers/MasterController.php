@@ -120,7 +120,7 @@ class MasterController extends Controller
         }
     }
 
-    public function edit(){
+    public function cari(){
         return view('dashboard.input', [
             'title' => 'Input Produk'
         ]);

@@ -39,12 +39,12 @@
                             </div>
                         </div>
                         <div class="mt-4 p-4 row">
-                            <label for="barcode" class="col-sm-3 col-form-label">Stok</label>
+                            <label for="stok" class="col-sm-3 col-form-label">Stok</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control @error('barcode') is-invalid @enderror"
-                                    name="barcode" id="barcode" value="{{ old('barcode') }}" autocomplete="off"
+                                <input type="text" class="form-control @error('stok') is-invalid @enderror"
+                                    name="stok" id="stok" value="{{ old('stok') }}" autocomplete="off"
                                     placeholder="Input Stock">
-                                @error('barcode')
+                                @error('stok')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -55,8 +55,9 @@
                             <label for="total_harga" class="col-sm-3 col-form-label">Grand Total Harga</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control @error('total_harga') is-invalid @enderror"
-                                    name="total_harga" id="total_harga" value="{{ old('total_harga') }}" autocomplete="off"
-                                    placeholder="" readonly>
+                                    name="total_harga" id="total_harga"
+                                    value="{{ number_format($data->total_harga, 0, ',', '.') }}" autocomplete="off"
+                                    readonly>
                                 @error('total_harga')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -80,10 +81,10 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-center"> - </td>
-                                        <td class="text-center"> - </td>
-                                        <td class="text-center"> - </td>
-                                        <td class="text-center"> - </td>
+                                        <td class="text-center">{{ $data->nama_produk }}</td>
+                                        <td class="text-center">{{ $data->kode_produk }}</td>
+                                        <td class="text-center">{{ $data->stok }}</td>
+                                        <td class="text-center">4</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -97,7 +98,7 @@
         $("#barcode").on('keyup', function(e) {
             if (e.key === 'Enter' || e.keyCode === 13) {
                 var value = $('#barcode').val()
-                location.href = '{{ url('/dashboard/update') }}/' + value;
+                location.href = '{{ url('/dashboard/update/') }}/' + value;
             }
         })
     </script>

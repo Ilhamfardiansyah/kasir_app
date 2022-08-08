@@ -52,11 +52,11 @@
                             </div>
                         </div>
                         <div class="mt-0 mb-4 p-4 row">
-                            <label for="total_harga" class="col-sm-3 col-form-label">Grand Total Harga</label>
+                            <label for="total_harga" class="col-sm-3 col-form-label">Total Harga</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control @error('total_harga') is-invalid @enderror"
                                     name="total_harga" id="total_harga" value="{{ old('total_harga') }}" autocomplete="off"
-                                    placeholder="" readonly>
+                                    placeholder="">
                                 @error('total_harga')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -80,10 +80,10 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-center"> - </td>
-                                        <td class="text-center"> - </td>
-                                        <td class="text-center"> - </td>
-                                        <td class="text-center"> - </td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">4</td>
                                     </tr>
                                 </tbody>
                             </table>

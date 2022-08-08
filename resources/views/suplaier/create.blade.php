@@ -72,9 +72,8 @@
                             </div>
                         </form>
                     </div>
-                    <!--//app-card-header-->
-                    <!--//app-card-->
                 </div>
+
                 <div class="col-12 col-lg-6">
                     <div class="app-card app-card-chart h-100 shadow-sm">
                         <div class="app-card-header p-3">
@@ -82,11 +81,8 @@
                                 <div class="col-auto">
                                     <h4 class="app-card-title">Data Supplaier</h4>
                                 </div>
-                                <!--//col-->
-
-                                <!--//col-->
                             </div>
-                            <!--//row-->
+
                         </div>
                         <div class="mt-4 mb-4 p-4 row">
                             <table id="example">
