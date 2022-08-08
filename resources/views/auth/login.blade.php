@@ -4,8 +4,7 @@
     <form class="auth-form login-form" id="input" method="POST" action="{{ route('login') }}" autocomplete="off">
         @csrf <div class="user-box">
             <input type="text" id="nik" class="form-control @error('nik') is-invalid @enderror"
-                value="{{ old('nik') }}" name="nik" required autocomplete="off" autofocus
-                placeholder="Nik Karyawan">
+                value="{{ old('nik') }}" name="nik" required autocomplete="off" placeholder="NIK">
             @error('nik')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
