@@ -44,6 +44,12 @@ class HomeController extends Controller
 	    if (auth()->user()->hasRole('admin')) {
 		return view('dashboards.admin', $data);
 	    }
+        if (auth()->user()->hasRole('kepala gudang')) {
+		return view('dashboards.kepalagudang', $data);
+	    }
+        if (auth()->user()->hasRole('finance')) {
+		return view('dashboards.admin', $data);
+	    }
 	    return view('dashboards.role_not_found');
     }
 }

@@ -37,6 +37,12 @@
             @role('kasir')
                 @include('partials.navbar_kasir')
             @endrole
+            @role('kepala gudang')
+                @include('partials.navbar_kepalagudang')
+            @endrole
+            @role('finance')
+                @include('partials.navbar_finance')
+            @endrole
         </div>
     </div>
     <!--//app-sidepanel-->

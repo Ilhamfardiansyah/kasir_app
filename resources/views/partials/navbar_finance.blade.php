@@ -27,95 +27,6 @@
             </a>
             <!--//nav-link-->
         </li>
-        <!--//nav-item-->
-        <li class="nav-item">
-            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link" href="#">
-                <span class="nav-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-basket" viewBox="0 0 16 16">
-                        <path
-                            d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
-                    </svg>
-                </span>
-                <span class="nav-link-text">Transaksi</span>
-            </a>
-            <!--//nav-link-->
-        </li>
-
-        <li class="nav-item">
-            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link" href="#">
-                <span class="nav-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-upc-scan" viewBox="0 0 16 16">
-                        <path
-                            d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5zM3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z" />
-                    </svg>
-                </span>
-                <span class="nav-link-text">Cetak Barcode</span>
-            </a>
-            <!--//nav-link-->
-        </li>
-
-
-
-        <li class="nav-item has-submenu">
-            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1"
-                aria-expanded="false" aria-controls="submenu-1">
-                <span class="nav-icon">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M4 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4z" />
-                        <path
-                            d="M6 0h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1H4a2 2 0 0 1 2-2z" />
-                    </svg>
-                </span>
-                <span class="nav-link-text">Data Barang</span>
-                <span class="submenu-arrow">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                    </svg>
-                </span>
-                <!--//submenu-arrow-->
-            </a>
-            <!--//nav-link-->
-            <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
-                <ul class="submenu-list list-unstyled">
-                    <li class="submenu-item"><a class="submenu-link {{ Request::is('/update') ? 'active' : '' }}"
-                            href="{{ url('/update') }}">Barang
-                            Masuk</a>
-                    </li>
-                    <li class="submenu-item"><a class="submenu-link" href="account.html">Retur Barang</a>
-                    </li>
-                    <li class="submenu-item"><a href="{{ url('/inputbarangbaru') }}"
-                            class="submenu-link {{ Request::is('inputbarangbaru') ? 'active' : '' }}">Input Barang
-                            Baru</a></li>
-                </ul>
-            </div>
-        </li>
-
-        <li class="nav-item">
-            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link" href="#">
-                <span class="nav-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-list-stars" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z" />
-                        <path
-                            d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z" />
-                    </svg>
-                </span>
-                <span class="nav-link-text">Stock Opname</span>
-            </a>
-            <!--//nav-link-->
-        </li>
 
         <!--//nav-item-->
         <li class="nav-item has-submenu">
@@ -124,8 +35,8 @@
                 aria-expanded="false" aria-controls="submenu-2">
                 <span class="nav-icon">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-columns-gap"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-columns-gap" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z" />
                     </svg>
@@ -192,46 +103,6 @@
             </div>
         </li>
         <!--//nav-item-->
-        <!--//nav-item-->
-        <li class="nav-item has-submenu">
-            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-4"
-                aria-expanded="false" aria-controls="submenu-4">
-                <span class="nav-icon">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-clipboard-data" viewBox="0 0 16 16">
-                        <path
-                            d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
-                        <path
-                            d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-                        <path
-                            d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
-                    </svg>
-                </span>
-                <span class="nav-link-text">Data Master</span>
-                <span class="submenu-arrow">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                    </svg>
-                </span>
-                <!--//submenu-arrow-->
-            </a>
-            <!--//nav-link-->
-            <div id="submenu-4" class="collapse submenu submenu-4" data-bs-parent="#menu-accordion">
-                <ul class="submenu-list list-unstyled">
-                    <li class="submenu-item"><a class="submenu-link {{ Request::is('/sizes') ? 'active' : '' }}"
-                            href="{{ url('/size') }}">Size</a>
-                    </li>
-                    <li class="submenu-item"><a class="submenu-link {{ Request::is('#') ? 'active' : '' }}"
-                            href="{{ url('/#') }}">Kategori</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-
         <li class="nav-item has-submenu">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
             <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-5"
