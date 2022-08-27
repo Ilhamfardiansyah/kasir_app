@@ -46,12 +46,13 @@
                                 <tr>
                                     <th>Product</th>
                                     <th>Kode Produk</th>
-                                    <th>No Invoice</th>
                                     <th>Quantity</th>
                                     <th>Barcode</th>
                                     <th>Nama Supplier</th>
                                     <th>Kode Supplier</th>
-                                    <th>Purchase Price</th>
+                                    <th>Harga Jual</th>
+                                    <th>Harga Beli</th>
+                                    <th>Total Harga Beli</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,19 +60,20 @@
                                     <tr>
                                         <td>{{ $item->nama_produk }}</td>
                                         <td>{{ $item->kode_produk }}</td>
-                                        <td>{{ $item->no_invoice }}</td>
                                         <td>{{ $item->stok }}</td>
                                         <td>{{ $item->barcode }}</td>
                                         <td>{{ $item->suplaier->nama_supplier }}</td>
                                         <td>{{ $item->suplaier->kode_supplier }}</td>
+                                        <td>Rp. {{ number_format($item->harga_jual, 0, ',', '.') }}</td>
                                         <td>Rp. {{ number_format($item->harga_beli, 0, ',', '.') }}</td>
+                                        <td>Rp. {{ number_format($item->total_harga, 0, ',', '.') }}</td>
                                     </tr>
                                 @endforeach
                                 {{-- <tr>
                             <td colspan="4"></td>
                         </tr> --}}
                                 <tr>
-                                    <td colspan="6">&nbsp;</td>
+                                    <td colspan="7">&nbsp;</td>
                                     <td><strong>Total</strong></td>
                                     <td><strong>Rp. {{ number_format($data->sum('harga_beli'), 0, ',', '.') }}</strong>
                                     </td>

@@ -8,6 +8,7 @@ use App\Http\Controllers\SuplaierController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\TransaksiController;
 
 
 /*
@@ -48,6 +49,9 @@ Route::get('/print', [MasterController::class, 'print']);
 Route::get('/printbulan', [MasterController::class, 'printmonth']);
 Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profile_karyawan');
 Route::get('/dashboard/update/{barcode}', [UpdateController::class, 'cari'])->name('update');
+Route::get('/transaksi', [TransaksiController::class, 'index'])->name('index');
+Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
+
 
 
 

@@ -114,7 +114,11 @@
                         <div class="col-sm-9 mt-2">
                             <select type="input" class="form-select" aria-label="Default select example"
                                 id="inputPassword">
-                                <option value="">0</option>
+                                <option value="">S</option>
+                                <option value="">M</option>
+                                <option value="">L</option>
+                                <option value="">XL</option>
+                                <option value="">XLL</option>
                             </select>
                         </div>
                     </div>
