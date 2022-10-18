@@ -49,10 +49,13 @@ Route::get('/print', [MasterController::class, 'print']);
 Route::get('/printbulan', [MasterController::class, 'printmonth']);
 Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profile_karyawan');
 Route::get('/dashboard/update/{barcode}', [UpdateController::class, 'cari'])->name('update');
-Route::get('/transaksi', [TransaksiController::class, 'index'])->name('index');
+Route::get('/transaksi', [TransaksiController::class, 'cari'])->name('menu');
+Route::post('/transaksi/baru', [TransaksiController::class, 'store']);
 Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
 Route::get('/cetak', [MasterController::class, 'index'])->name('barcode');
 Route::get('/barcode', [MasterController::class, 'barcode']);
+Route::get('/dashboard/cari', [TransaksiController::class, 'cari'])->name('jadwal');
+
 
 
 

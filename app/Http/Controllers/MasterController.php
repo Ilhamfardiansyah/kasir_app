@@ -137,7 +137,9 @@ class MasterController extends Controller
     }
 
     public function barcode(){
-        return view('barcode.index');
+        return view('barcode.index', [
+            'title' => 'Barcode'
+        ]);
     }
 }
 
