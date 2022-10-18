@@ -30,7 +30,7 @@
         <!--//nav-item-->
         <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/transaksi">
                 <span class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-basket" viewBox="0 0 16 16">
@@ -45,7 +45,7 @@
 
         <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/barcode">
                 <span class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-upc-scan" viewBox="0 0 16 16">

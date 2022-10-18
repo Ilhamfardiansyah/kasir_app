@@ -51,7 +51,8 @@ Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profi
 Route::get('/dashboard/update/{barcode}', [UpdateController::class, 'cari'])->name('update');
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('index');
 Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
-
+Route::get('/cetak', [MasterController::class, 'index'])->name('barcode');
+Route::get('/barcode', [MasterController::class, 'barcode']);
 
 
 

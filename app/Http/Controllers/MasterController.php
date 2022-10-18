@@ -135,6 +135,10 @@ class MasterController extends Controller
             ]);
                 return back();
     }
+
+    public function barcode(){
+        return view('barcode.index');
+    }
 }
 
 

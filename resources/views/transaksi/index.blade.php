@@ -10,19 +10,35 @@
                         <div class="app-card-header p-3">
                             <div class="row justify-content-between align-items-center">
                                 <div class="col-auto">
-                                    <h4 class="app-card-title">Tambah Stock</h4>
+                                    <h4 class="app-card-title">Tabel Transaksi</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-4 mb-1 p-4 row">
-                            <label for="barcode" class="col-sm-3 col-form-label">Barcode</label>
+                        <form action="/dashboard/cari" method="get">
+                            <div class="mt-4 mb-1 p-4 row">
+                                <label for="nama_produk" class="col-sm-3 col-form-label">List Penjualan Hari ini</label>
+                                <div class="col-sm-9">
+                                    <select class="form-select" name="cari" aria-label="Default select example">
+                                        <option selected>Buka List..</option>
+                                        @foreach ($data as $item)
+                                            <option value="{{ $item->id }}">{{ $item->nama_produk }}</option>
+                                        @endforeach
+                                    </select>
+                                    <input type="submit" value="CARI">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="mt-0 mb-1 p-4 row">
+                            <label for="barcode" class="col-sm-3 col-form-label">barcode</label>
                             <div class="col-sm-9">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
-                                    @foreach ($data as $item)
-                                        <option value="{{ $item->id }}">{{ $item->nama_produk }}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" class="form-control @error('barcode') is-invalid @enderror"
+                                    name="barcode" id="barcode" value="{{ old('barcode') }}" autocomplete="off"
+                                    placeholder="" readonly>
+                                @error('barcode')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="mt-0 mb-1 p-4 row">
@@ -96,12 +112,4 @@
             </div>
         </div>
     </div>
-    <script>
-        $("#barcode").on('keyup', function(e) {
-            if (e.key === 'Enter' || e.keyCode === 13) {
-                var value = $('#barcode').val()
-                location.href = '{{ url('/dashboard/update') }}/' + value;
-            }
-        })
-    </script>
 @endsection

@@ -67,40 +67,38 @@
             </div>
 
             <div class="row g-4 mb-4">
-                <div class="col-6 col-lg-12 card">
-                    <div class="app-card app-card-stat shadow-sm h-100">
-                        <table id="example1">
-                            <thead>
+                <div class="app-card app-card-stat shadow-sm h-100">
+                    <table id="example1">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Kode Produk</th>
+                                <th class="text-center">Nama Produk</th>
+                                <th class="text-center">Barcode</th>
+                                <th class="text-center">Stok</th>
+                                <th class="text-center">Harga Jual</th>
+                            </tr>
+                        </thead>
+                        @foreach ($produk as $produks)
+                            <tbody>
                                 <tr>
-                                    <th class="text-center">Kode Produk</th>
-                                    <th class="text-center">Nama Produk</th>
-                                    <th class="text-center">Barcode</th>
-                                    <th class="text-center">Stok</th>
-                                    <th class="text-center">Harga Jual</th>
+                                    <td>{{ $produks->kode_produk }}</td>
+                                    <td>{{ $produks->nama_produk }}</td>
+                                    <td>{{ $produks->barcode }}</td>
+                                    <td>{{ $produks->stok }}</td>
+                                    <td>{{ number_format($produks->harga_jual, 0, ',', '.') }}</td>
                                 </tr>
-                            </thead>
-                            @foreach ($produk as $produks)
-                                <tbody>
-                                    <tr>
-                                        <td>{{ $produks->kode_produk }}</td>
-                                        <td>{{ $produks->nama_produk }}</td>
-                                        <td>{{ $produks->barcode }}</td>
-                                        <td>{{ $produks->stok }}</td>
-                                        <td>{{ number_format($produks->harga_jual, 0, ',', '.') }}</td>
-                                    </tr>
-                                </tbody>
-                            @endforeach
-                            <tfoot>
-                                <tr>
-                                    <th class="text-center">Kode Produk</th>
-                                    <th class="text-center">Nama Produk</th>
-                                    <th class="text-center">Barcode</th>
-                                    <th class="text-center">Stok</th>
-                                    <th class="text-center">Harga Jual</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                            </tbody>
+                        @endforeach
+                        <tfoot>
+                            <tr>
+                                <th class="text-center">Kode Produk</th>
+                                <th class="text-center">Nama Produk</th>
+                                <th class="text-center">Barcode</th>
+                                <th class="text-center">Stok</th>
+                                <th class="text-center">Harga Jual</th>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </div>
             </div>
         </div>

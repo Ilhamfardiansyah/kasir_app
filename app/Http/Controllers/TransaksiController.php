@@ -19,4 +19,14 @@ class TransaksiController extends Controller
         $title = 'Jadwal Penjualan';
         return view('jadwal.index', compact('data', 'title'));
     }
+
+    public function cari(Request $request){
+        $cari = $request->cari;
+
+        $produk = DB::table('produk')
+        ->where('id', 'like', "%".$cari. "%")
+        ->paginate();
+
+        return view('transaksi.index', ['produk' =>$produk]);
+    }
 }
