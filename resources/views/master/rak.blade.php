@@ -11,13 +11,13 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <b>Size dan Ukuran</b>
+                        <b>Table Rak</b>
                     </div>
                     <div class="card-body">
                         <table id="example1">
                             <thead>
                                 <tr>
-                                    <th class="text-center">Size</th>
+                                    <th class="text-center">Rak</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                             </thead>
@@ -26,7 +26,7 @@
                                     <tr>
                                         <td class="text-center">{{ $item->nama }}</td>
                                         <td class="text-center">
-                                            <form action="/hapus/{{ $item->id }}" method="post">
+                                            <form action="/hapus_rak/{{ $item->id }}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <button>
@@ -52,9 +52,9 @@
                                 });
                             });
                         </script>
-                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sizeModal">Tambah
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rakModal">Tambah
                             Data</a>
-                        @include('modal.size')
+                        @include('modal.rak')
                     </div>
                 </div>
             </div>

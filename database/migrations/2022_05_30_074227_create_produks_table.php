@@ -16,6 +16,9 @@ class CreateProduksTable extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('suplaier_id');
+            $table->foreignId('kategori_id');
+            $table->foreignId('rak_id');
+            $table->foreignId('size_id');
             $table->foreignId('user_id');
             $table->string('no_invoice')->nullable();
             $table->string('nama_produk');

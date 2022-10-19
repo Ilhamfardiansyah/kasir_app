@@ -16,4 +16,15 @@ class Produk extends Model
     public function suplaier(){
         return $this->belongsTo(Suplaier::class);
     }
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
+    public function rak(){
+        return $this->belongsTo(Rak::class);
+    }
+    public function size(){
+        return $this->belongsTo(Size::class);
+    }
+
 }

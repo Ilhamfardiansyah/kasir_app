@@ -9,6 +9,8 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\RakController;
 
 
 /*
@@ -45,6 +47,8 @@ Route::get('/account', [AccountController::class, 'index'])->name('account');
 Route::get('/update', [MasterController::class, 'cari']);
 Route::post('/updatebarang', [MasterController::class, 'update']);
 Route::get('/size', [SizeController::class, 'index'])->name('size');
+Route::post('/create/size', [SizeController::class, 'store'])->name('size');
+Route::delete('/hapus/{id}', [SizeController::class, 'destroy'])->name('size');
 Route::get('/print', [MasterController::class, 'print']);
 Route::get('/printbulan', [MasterController::class, 'printmonth']);
 Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profile_karyawan');
@@ -55,6 +59,15 @@ Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
 Route::get('/cetak', [MasterController::class, 'index'])->name('barcode');
 Route::get('/barcode', [MasterController::class, 'barcode']);
 Route::get('/dashboard/cari', [TransaksiController::class, 'cari'])->name('jadwal');
+Route::get('/kategori', [KategoriController::class, 'index'])->name('index');
+Route::post('/create/kategori', [KategoriController::class, 'store'])->name('index');
+Route::get('/kategori', [KategoriController::class, 'index'])->name('index');
+Route::get('/rak', [RakController::class, 'index'])->name('index');
+Route::post('/create/rak', [RakController::class, 'store'])->name('store');
+Route::delete('/hapus_rak/{id}', [RakController::class, 'destroy'])->name('size');
+
+
+
 
 
 
