@@ -8,15 +8,21 @@ use Illuminate\Routing\Controller;
 use App\Models\Suplaier;
 use Auth;
 use Alert;
+use App\Models\Size;
+use App\Models\Kategori;
+use App\Models\Rak;
 
 
 class MasterController extends Controller
 {
-    public function index(){
-        return view('dashboard.index', [
-            "title" => "Data Master",
-            'suplaier' => Suplaier::all()
-        ]);
+    public function index()
+    {
+            $title = 'Data Master';
+            $suplaier = Suplaier::all();
+            $size = Size::all();
+            $kategori = Kategori::all();
+            $rak = Rak::all();
+        return view('dashboard.index', compact('title', 'suplaier', 'size', 'kategori', 'rak'));
     }
 
     public function create(){
@@ -31,8 +37,12 @@ class MasterController extends Controller
         $invoice ='Invoice:000'. $last. date('GisdMY');
         $kode_barang = 'B000'. $last;
         $barcode = '000045825'. $last;
-        $produk = Produk::with('suplaier');
-        return view ('dashboard.index', compact('invoice', 'produk', 'title', 'suplier', 'kode_barang', 'barcode'));
+        $size = Size::all();
+        $kategori = Kategori::all();
+        $rak = Rak::all();
+        $produk = Produk::with('suplaier', 'size');
+        return view ('dashboard.index', compact('invoice', 'produk', 'title',
+        'suplier', 'kode_barang', 'barcode', 'size', 'kategori', 'rak'));
     }
 
     public function store(Request $request){
@@ -45,6 +55,9 @@ class MasterController extends Controller
             'stok' => 'required',
             'harga_jual' => 'required',
             'harga_beli' => 'required',
+            'size_id' => 'required',
+            'kategori_id' => 'required',
+            'rak_id' => 'required', //disini am errornya rak_id gada, sedangkan lu setnya harus terisi, di vienya jek? iyaa
         ]);
 
         $nama_produk = $request->nama_produk;
@@ -57,6 +70,9 @@ class MasterController extends Controller
         $stok = $request->stok;
         $harga_jual = $request->harga_jual;
         $harga_beli = $request->harga_beli;
+        $size_id = $request->size_id;
+        $kategori_id = $request->kategori_id;
+        $rak_id = $request->rak_id;
         $title = 'Print Invoice';
         $data = $request->created_at;
         $nama_suplaier = Suplaier::where('id', $suplaier_id)->first()->value('nama_supplier');
@@ -72,7 +88,10 @@ class MasterController extends Controller
             'stok' => $stok,
             'harga_jual' => $harga_jual,
             'harga_beli' => $harga_beli,
-            'total_harga'=> $total_harga
+            'total_harga'=> $total_harga,
+            'size_id' => $size_id,
+            'kategori_id' => $kategori_id,
+            'rak_id' => $rak_id
         ]);
 
         $last = Produk::groupBy('kode_produk')->get();
@@ -126,15 +145,17 @@ class MasterController extends Controller
         ]);
     }
 
-    public function update(Request $request){
-       $tes = Produk::where('barcode', $request->barcode)->first();
-        // dd($tes->stok+$request->stok);
-        Produk::where('barcode', $request->barcode)
-            ->update([
-                'stok' => $tes->stok+$request->stok,
-            ]);
-                return back();
-    }
+    // public function update(Request $request){
+    //    $tes = Produk::where('stok', $request->stok)->first();
+    //     // dd($tes->stok+$request->stok);
+    //            Produk::where('stok', $request->stok)
+    //         ->update([
+    //             'stok' => $tes->stok+$request->stok,
+    //         ]);
+    //             return back();
+    // }
+
+
 
     public function barcode(){
         return view('barcode.index', [

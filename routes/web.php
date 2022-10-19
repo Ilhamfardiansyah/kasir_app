@@ -45,7 +45,7 @@ Route::get('/create', [SuplaierController::class, 'create'])->name('inputcreate'
 Route::post('/create/data', [SuplaierController::class, 'store']);
 Route::get('/account', [AccountController::class, 'index'])->name('account');
 Route::get('/update', [MasterController::class, 'cari']);
-Route::post('/updatebarang', [MasterController::class, 'update']);
+Route::post('/updatebarang/{stok}', [UpdateController::class, 'update']);
 Route::get('/size', [SizeController::class, 'index'])->name('size');
 Route::post('/create/size', [SizeController::class, 'store'])->name('size');
 Route::delete('/hapus/{id}', [SizeController::class, 'destroy'])->name('size');
@@ -54,7 +54,10 @@ Route::get('/printbulan', [MasterController::class, 'printmonth']);
 Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profile_karyawan');
 Route::get('/dashboard/update/{barcode}', [UpdateController::class, 'cari'])->name('update');
 Route::get('/transaksi', [TransaksiController::class, 'cari'])->name('menu');
-Route::post('/transaksi/baru', [TransaksiController::class, 'store']);
+
+Route::post('/kasir-post', [TransaksiController::class, 'store']);
+Route::get('/nguranginStok/{id}/{qty}', [TransaksiController::class, 'nguranginStok']);
+
 Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
 Route::get('/cetak', [MasterController::class, 'index'])->name('barcode');
 Route::get('/barcode', [MasterController::class, 'barcode']);

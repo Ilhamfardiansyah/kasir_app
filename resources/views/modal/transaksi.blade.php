@@ -7,7 +7,7 @@
 
 <div class="modal fade" id="modaltransaksi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
-        <form method="post" id="kasir-post">
+        <form method="post" action="{{ url('kasir-post') }}">
             @csrf
             <div class="modal-content">
                 <div class="modal-header">
@@ -31,11 +31,22 @@
                                 @foreach ($produk as $item)
                                     <tr>
                                         <td></td>
-                                        <td class="kodeProdukValue">{{ $item->kode_produk }}</td>
-                                        <td class="namaProdukValue">{{ $item->nama_produk }}</td>
-                                        <td class="barcodeValue">{{ $item->barcode }}</td>
-                                        <td class="hargaJualValue">{{ $item->harga_jual }}</td>
-                                        <td class="stokValue">{{ $item->stok }}</td>
+                                        <td class="kodeProdukValue">
+                                            {{ $item->kode_produk }}
+                                            <input type="hidden" name="kode_produk" value="{{ $item->kode_produk }}">
+                                        </td>
+                                        <td class="namaProdukValue">{{ $item->nama_produk }}
+                                            <input type="hidden" name="nama_produk" value="{{ $item->nama_produk }}">
+                                        </td>
+                                        <td class="barcodeValue">{{ $item->barcode }}
+                                            <input type="hidden" name="barcode" value="{{ $item->barcode }}">
+                                        </td>
+                                        <td class="hargaJualValue">{{ $item->harga_jual }}
+                                            <input type="hidden" name="harga_jual" value="{{ $item->harga_jual }}">
+                                        </td>
+                                        <td class="stokValue">{{ $item->stok }}
+                                            <input type="hidden" name="stok" value="{{ $item->stok }}">
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

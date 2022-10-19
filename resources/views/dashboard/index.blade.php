@@ -146,6 +146,11 @@
                                                 $('.hargaJualValue').val("");
                                                 $('.hargaBeliValue').val("");
                                                 $('.hargaJualValue').val("");
+                                                $('.sizeValue').val("");
+                                                $('.kategoriValue').val("");
+                                                $('.rakValue').val("");
+
+                                                //rak idnya dmna am?
 
                                                 $('.kodeProdukValue').val(response.data.kode_barang);
                                                 $('.invoiceValue').val("");
@@ -156,6 +161,7 @@
                                         },
                                         error: function(error) {
                                             $('.btnSaving').show('fast');
+                                            toastr.error(error)
                                         }
                                     });
                                 })

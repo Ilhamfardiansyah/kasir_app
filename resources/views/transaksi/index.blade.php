@@ -58,10 +58,11 @@
                                     </svg> Tambah Produk</button>
                                 @include('modal.transaksi')
                             </div>
-
                             <table id="example" class="table table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th class="text-center">No.</th>
+                                        <th class="text-center">#</th>
                                         <th class="text-center">Kode Produk</th>
                                         <th class="text-center">Nama Produk</th>
                                         <th class="text-center">Barcode</th>
@@ -69,6 +70,23 @@
                                         <th class="text-center">Stok</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    @foreach ($produk as $item)
+                                        <tr class="text-center">
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                <a href="javascript:void(0)" onclick="kuranginStok('{{ $item->id }}' )"
+                                                    class="btn btn-sm btn-dark"><i class="fas fa-edit"></i>
+                                                    Updat Stok</a>
+                                            </td>
+                                            <td>{{ $item->kode_produk }}</td>
+                                            <td>{{ $item->nama_produk }}</td>
+                                            <td>{{ $item->barcode }}</td>
+                                            <td>{{ $item->harga_jual }}</td>
+                                            <td>{{ $item->stok }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                             <div class="d-grid gap-4 d-md-flex justify-content-md-end">
                                 <a onclick="window.print()" class="btn btn-success noprint"><svg
@@ -79,73 +97,85 @@
                                     </svg> Print</a>
                             </div>
                             </form>
-                            <script type="text/javascript">
-                                console.log('test');
-                                $('#kasir-post').on('submit', function(e) {
-                                    $('.btnSaving').hide('fast');
-                                    e.preventDefault();
-                                    var values = $(this).serialize();
-                                    console.log(values);
-                                    var nama_produk = $('.namaProdukValue').val();
-                                    var kode_produk = $('.kodeProdukValue').val();
-                                    var barcode = $('.barcodeValue').val();
-                                    var stok = $('.stokValue').val();
-                                    var harga_jual = $('.hargaJualValue').val();
 
-                                    $.ajax({
-                                        url: "{{ url('/transaksi/baru') }}",
-                                        type: "post",
-                                        dataType: 'json',
-                                        data: values,
-                                        success: function(response) {
-                                            if (response.status == 'ok') {
-                                                $('#example tbody').append(`
-                                                    <tr>
-                                                        <td class="text-center">
-                                                            ${kode_produk}
-                                                        </td>
-                                                        <td class="text-center">
-                                                            ${nama_produk}
-                                                        </td>
-                                                        <td class="text-center">
-                                                            ${barcode}
-                                                        </td>
-                                                        <td class="text-center">
-                                                            ${stok}
-                                                        </td>
-                                                        <td class="text-center">
-                                                            ${harga_jual}
-                                                        </td>
-                                                        <td class="text-center">
-                                                            ${harga_beli}
-                                                        </td>
-                                                    </tr>`)
-                                                $('#modalproduk').modal('hide')
-                                                $('.btnSaving').show('fast');
-                                                $('.namaProdukValue').val("");
-                                                $('.namaStokValue').val("");
-                                                $('.supplierValue').val("");
-                                                $('.hargaJualValue').val("");
-                                                $('.hargaBeliValue').val("");
-                                                $('.hargaJualValue').val("");
-
-                                                $('.kodeProdukValue').val(response.data.kode_barang);
-                                                $('.invoiceValue').val("");
-                                                $('.barcodeValue').val(response.data.barcode);
-                                                $('.invoiceValue').val(response.data.invoice);
-                                                toastr.success('Barang baru sudah ditambahkan!')
-                                            }
-                                        },
-                                        error: function(error) {
-                                            $('.btnSaving').show('fast');
-                                        }
-                                    });
-                                })
-                            </script>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        console.log('test');
+
+        function kuranginStok(id) {
+
+            let qty = prompt("Masukin QTYnya ajg...", "");
+            if (qty != null) {
+                location.href = "{{ url('nguranginStok') }}/" + id + '/' + qty;
+            } else {
+                return false;
+            }
+        }
+
+        $('#kasir-post').on('submit', function(e) {
+            $('.btnSaving').hide('fast');
+            e.preventDefault();
+            var values = $(this).serialize();
+            console.log(values);
+            var nama_produk = $('.namaProdukValue').val();
+            var kode_produk = $('.kodeProdukValue').val();
+            var barcode = $('.barcodeValue').val();
+            var stok = $('.stokValue').val();
+            var harga_jual = $('.hargaJualValue').val();
+
+            $.ajax({
+                url: "{{ url('/transaksi/baru') }}",
+                type: "post",
+                dataType: 'json',
+                data: values,
+                success: function(response) {
+                    if (response.status == 'ok') {
+                        $('#example tbody').append(`
+                            <tr>
+                                <td class="text-center">
+                                    ${kode_produk}
+                                </td>
+                                <td class="text-center">
+                                    ${nama_produk}
+                                </td>
+                                <td class="text-center">
+                                    ${barcode}
+                                </td>
+                                <td class="text-center">
+                                    ${stok}
+                                </td>
+                                <td class="text-center">
+                                    ${harga_jual}
+                                </td>
+                                <td class="text-center">
+                                    ${harga_beli}
+                                </td>
+                            </tr>`)
+                        $('#modalproduk').modal('hide')
+                        $('.btnSaving').show('fast');
+                        $('.namaProdukValue').val("");
+                        $('.namaStokValue').val("");
+                        $('.supplierValue').val("");
+                        $('.hargaJualValue').val("");
+                        $('.hargaBeliValue').val("");
+                        $('.hargaJualValue').val("");
+
+                        $('.kodeProdukValue').val(response.data.kode_barang);
+                        $('.invoiceValue').val("");
+                        $('.barcodeValue').val(response.data.barcode);
+                        $('.invoiceValue').val(response.data.invoice);
+                        toastr.success('Barang baru sudah ditambahkan!')
+                    }
+                },
+                error: function(error) {
+                    $('.btnSaving').show('fast');
+                }
+            });
+        })
+    </script>
 @endsection

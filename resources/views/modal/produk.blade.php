@@ -70,7 +70,7 @@
                         <div class="col-sm-9 mt-2">
                             <select type="input" class="form-select supplierValue" aria-label="Default select example"
                                 id="suplaier_id" name="suplaier_id" required>
-                                <option value="" selected disabled>--Pilih Supplier--
+                                <option value="" selected disabled>-- Pilih Supplier --
                                 </option>
                                 @foreach ($suplier as $suplaiers)
                                     <option value="{{ $suplaiers->id }}">
@@ -104,21 +104,39 @@
                             @enderror
                         </div>
 
-                        <label for="inputPassword" class="col-sm-3 mt-2 mb col-form-label descriptionValue">Description
+                        <label for="kategori_id" class="col-sm-3 mt-2 mb col-form-label descriptionValue">Description
                             Item</label>
                         <div class="col-sm-9 mt-2">
-                            <input type="text" class="form-control" id="inputPassword" autocomplete="off">
+                            <select type="input" class="form-select kategoriValue"
+                                aria-label="Default select example" name="kategori_id" id="kategori_id">
+                                <option value="" selected disabled>-- Pilih Kategori --
+                                </option>
+                                @foreach ($kategori as $kategoris)
+                                    <option value="{{ $kategoris->id }}">{{ $kategoris->nama }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
-                        <label for="inputPassword" class="col-sm-3 mt-2 mb col-form-label">Size Item</label>
+                        <label for="size_id" class="col-sm-3 mt-2 mb col-form-label">Size Item</label>
                         <div class="col-sm-9 mt-2">
-                            <select type="input" class="form-select" aria-label="Default select example"
-                                id="inputPassword">
-                                <option value="">S</option>
-                                <option value="">M</option>
-                                <option value="">L</option>
-                                <option value="">XL</option>
-                                <option value="">XLL</option>
+                            <select type="input" class="form-select sizeValue" aria-label="Default select example"
+                                name="size_id" id="size_id">
+                                <option value="" selected disabled>-- Pilih Size --
+                                </option>
+                                @foreach ($size as $sizes)
+                                    <option value="{{ $sizes->id }}">{{ $sizes->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <label for="rak_id" class="col-sm-3 mt-2 mb col-form-label">Rak</label>
+                        <div class="col-sm-9 mt-2">
+                            <select type="input" class="form-select rakValue" aria-label="Default select example"
+                                name="rak_id" id="rak_id">
+                                <option value="" selected disabled>-- Pilih Rak --
+                                </option>
+                                @foreach ($rak as $raks)
+                                    <option value="{{ $raks->id }}">{{ $raks->nama }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

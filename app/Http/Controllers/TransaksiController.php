@@ -8,7 +8,7 @@ use App\Models\Produk;
 use Illuminate\Support\Facades\DB;
 use App\Models\Suplaier;
 use Illuminate\Support\Facades\Auth;
-
+use Alert;
 
 class TransaksiController extends Controller
 {
@@ -22,6 +22,21 @@ class TransaksiController extends Controller
         $title = 'Jadwal Penjualan';
         return view('jadwal.index', compact('data', 'title'));
     }
+
+    function nguranginStok($id, $qty){
+        $stok = Produk::Where('id', $id)->first()->stok;
+        if($qty > $stok ){
+             Alert::error('blooggg kelebihan...');
+            return back();
+        }else{
+        $produk = Produk::Where('id', $id)->update([
+            'stok' => $stok - $qty
+            ]);
+             Alert::success('good job...');
+            return back();
+        }
+    }
+
 
     public function cari(Request $request){
         $cari = $request->cari;
@@ -46,6 +61,7 @@ class TransaksiController extends Controller
     }
 
     public function store(Request $request){
+        dd($request->all()); //viewnya am mana
         $validateData = $request->validate([
             'nama_produk' => 'required',
             'suplaier_id' => 'required',
@@ -56,6 +72,7 @@ class TransaksiController extends Controller
             'harga_jual' => 'required',
             'harga_beli' => 'required',
         ]);
+
 
         $nama_produk = $request->nama_produk;
         $suplaier_id = $request->suplaier_id;

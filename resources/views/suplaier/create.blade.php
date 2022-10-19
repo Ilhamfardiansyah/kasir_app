@@ -24,9 +24,10 @@
                             <div class="mt-4 mb-4 p-4 row">
                                 <label for="nama_supplier" class="col-sm-3 col-form-label">Nama Supplaier</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control @error('nama_supplier') is-invalid @enderror"
+                                    <input onkeyup="this.value = this.value.toUpperCase()" type="text"
+                                        class="form-control @error('nama_supplier') is-invalid @enderror"
                                         name="nama_supplier" id="nama_supplier" value="{{ old('nama_supplier') }}"
-                                        autocomplete="off">
+                                        autocomplete="off" autofocus>
                                     @error('nama_supplier')
                                         <div class="invalid-feedback">
                                             {{ $message }}

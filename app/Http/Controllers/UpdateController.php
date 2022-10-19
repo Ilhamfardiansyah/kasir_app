@@ -9,7 +9,7 @@ use Alert;
 
 class UpdateController extends Controller
 {
-     public function cari($barcode)
+    public function cari($barcode)
     {
         // $data = Post::Where('barcode' , $barcode)->with(['suplaier', 'rak'])->first();
         $data = Produk::Where('barcode' , $barcode)->first();
@@ -22,4 +22,16 @@ class UpdateController extends Controller
     return view('dashboard.data', compact('data', 'title'));
                     }
             }
-}
+
+controllernya mana am
+    public function update(Request $request)
+    {
+        $tes = Produk::where('barcode', $request->stok)->first();
+        Produk::where('stok', $request->stok)
+        ->udate([
+            'data' => $tes->stok+$request->stok
+        ]);
+        return back();
+    }
+
+            }
