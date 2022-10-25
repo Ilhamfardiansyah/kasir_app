@@ -28,7 +28,7 @@
                                         <td>{{ $item->kode_produk }}</td>
                                         <td>{{ $item->stok }}</td>
                                         <td>{{ $item->barcode }}</td>
-                                        <td><a href="/data_rak/{{ $item->rak->id }}">{{ $item->rak->nama }}</a></td>
+                                        <td>{{ $item->rak_id }}</td>
                                         <td>{{ $item->harga_jual }}</td>
                                         <td>{{ $item->harga_beli }}</td>
                                     </tr>

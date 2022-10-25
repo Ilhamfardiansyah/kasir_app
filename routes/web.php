@@ -11,6 +11,7 @@ use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RakController;
+use App\Models\Rak;
 
 
 /*
@@ -61,6 +62,7 @@ Route::get('/nguranginStok/{id}/{qty}', [TransaksiController::class, 'nguranginS
 Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
 Route::get('/cetak', [MasterController::class, 'index'])->name('barcode');
 Route::get('/barcode', [MasterController::class, 'barcode']);
+Route::get('/data_rak/{rak:id}', [MasterController::class, 'show']);
 Route::get('/dashboard/cari', [TransaksiController::class, 'cari'])->name('jadwal');
 Route::get('/kategori', [KategoriController::class, 'index'])->name('index');
 Route::post('/create/kategori', [KategoriController::class, 'store'])->name('index');

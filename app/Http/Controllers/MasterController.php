@@ -11,6 +11,7 @@ use Alert;
 use App\Models\Size;
 use App\Models\Kategori;
 use App\Models\Rak;
+use Illuminate\Support\Facades\DB;
 
 
 class MasterController extends Controller
@@ -158,9 +159,16 @@ class MasterController extends Controller
 
 
     public function barcode(){
-        return view('barcode.index', [
-            'title' => 'Barcode'
-        ]);
+        $data = Produk::with(['rak', 'kategori'])->get();
+        $title = 'Print Barcode';
+        return view('barcode.index', compact('data', 'title'));
+    }
+
+    public function show(Rak $rak)
+    {
+        $title = 'Cetak Barcode';
+        $data = $rak->produk;
+        return view('barcode.detail', compact('title', 'data'));
     }
 }
 
