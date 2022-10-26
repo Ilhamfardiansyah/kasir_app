@@ -168,11 +168,14 @@
             <!--//nav-link-->
             <div id="submenu-4" class="collapse submenu submenu-4" data-bs-parent="#menu-accordion">
                 <ul class="submenu-list list-unstyled">
-                    <li class="submenu-item"><a class="submenu-link {{ Request::is('/sizes') ? 'active' : '' }}"
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('size') ? 'active' : '' }}"
                             href="{{ url('/size') }}">Size</a>
                     </li>
-                    <li class="submenu-item"><a class="submenu-link {{ Request::is('#') ? 'active' : '' }}"
-                            href="{{ url('/#') }}">Kategori</a>
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('kategori') ? 'active' : '' }}"
+                            href="{{ url('/kategori') }}">Kategori</a>
+                    </li>
+                    <li class="submenu-item"><a class="submenu-link {{ Request::is('rak') ? 'active' : '' }}"
+                            href="{{ url('/rak') }}">Rak</a>
                     </li>
                 </ul>
             </div>

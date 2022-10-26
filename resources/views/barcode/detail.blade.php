@@ -9,37 +9,49 @@
             <div class="row g-4 mb-4">
                 <div class="col-6 col-lg-12 card">
                     <div class="app-card app-card-stat shadow-sm h-100">
-                        <table id="jadwal" class="display" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">Nama Barang</th>
-                                    <th class="text-center">Kode Barang</th>
-                                    <th class="text-center">Stock</th>
-                                    <th class="text-center">Barcode</th>
-                                    <th class="text-center">Rak</th>
-                                    <th class="text-center">Harga Jual</th>
-                                    <th class="text-center">Harga Beli</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $item)
+                        <button onclick="cetakBarcode('{{ route('cetak_barcode') }}')"
+                            class="btn btn-outline-primary">Button</button>
+                        <form action="" method="post" class="data_rak">
+                            <table id="jadwal" class="display" style="width:100%">
+                                <thead>
                                     <tr>
-                                        <td>{{ $item->nama_produk }}</td>
-                                        <td>{{ $item->kode_produk }}</td>
-                                        <td>{{ $item->stok }}</td>
-                                        <td>{{ $item->barcode }}</td>
-                                        <td>{{ $item->rak_id }}</td>
-                                        <td>{{ $item->harga_jual }}</td>
-                                        <td>{{ $item->harga_beli }}</td>
+                                        <th class="text-center">Nama Barang</th>
+                                        <th class="text-center">Kode Barang</th>
+                                        <th class="text-center">Stock</th>
+                                        <th class="text-center">Barcode</th>
+                                        <th class="text-center">Rak</th>
+                                        <th class="text-center">Harga Jual</th>
+                                        <th class="text-center">Harga Beli</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($data as $item)
+                                        <tr>
+                                            <td>{{ $item->nama_produk }}</td>
+                                            <td>{{ $item->kode_produk }}</td>
+                                            <td>{{ $item->stok }}</td>
+                                            <td>{{ $item->barcode }}</td>
+                                            <td>{{ $item->rak_id }}</td>
+                                            <td>{{ $item->harga_jual }}</td>
+                                            <td>{{ $item->harga_beli }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function cetakBarcode(url) {
+            $('.data_rak')
+                .attr('target', '_blank')
+                .attr('action', 'url')
+                .submit();
+        }
+    </script>
     <script>
         $(document).ready(function() {
             $('#jadwal').DataTable({

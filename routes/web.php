@@ -61,6 +61,7 @@ Route::get('/nguranginStok/{id}/{qty}', [TransaksiController::class, 'nguranginS
 
 Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
 Route::get('/cetak', [MasterController::class, 'index'])->name('barcode');
+Route::post('/cetak-barcode', [MasterController::class, 'cetakBarcode'])->name('cetak_barcode');
 Route::get('/barcode', [MasterController::class, 'barcode']);
 Route::get('/data_rak/{rak:id}', [MasterController::class, 'show']);
 Route::get('/dashboard/cari', [TransaksiController::class, 'cari'])->name('jadwal');

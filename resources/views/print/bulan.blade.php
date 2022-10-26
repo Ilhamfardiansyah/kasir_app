@@ -75,9 +75,15 @@
                                 <tr>
                                     <td colspan="7">&nbsp;</td>
                                     <td><strong>Total</strong></td>
-                                    <td><strong>Rp. {{ number_format($data->sum('harga_beli'), 0, ',', '.') }}</strong>
+                                    <td><strong>Rp. {{ number_format($total_harga, 0, ',', '.') }}</strong>
                                     </td>
                                 </tr>
+                                <td>
+                                    <h5>Laba Kotor</h5><strong>Rp. {{ number_format($keseluruhan) }}</strong>
+                                </td>
+                                <td>
+                                    <h5>HPP</h5><strong>Rp. {{ number_format($keseluruhan - $total_harga) }}</strong>
+                                </td>
                             </tbody>
                         </table>
                     </div>

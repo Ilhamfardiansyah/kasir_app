@@ -23,7 +23,6 @@ class UpdateController extends Controller
                     }
             }
 
-controllernya mana am
     public function update(Request $request)
     {
         $tes = Produk::where('barcode', $request->stok)->first();

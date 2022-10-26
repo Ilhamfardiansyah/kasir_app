@@ -136,7 +136,11 @@ class MasterController extends Controller
             return back();
         }else{
             $title = 'Print Invoice';
-            return view('print.bulan', compact('data', 'title'));
+            $stok = $data->sum('stok');
+            $total = $data->sum('harga_beli');
+            $total_harga = $data->sum('total_harga');
+            $keseluruhan = $stok * $total;
+            return view('print.bulan', compact('data', 'title', 'stok', 'total', 'total_harga', 'keseluruhan'));
         }
     }
 
@@ -169,6 +173,11 @@ class MasterController extends Controller
         $title = 'Cetak Barcode';
         $data = $rak->produk;
         return view('barcode.detail', compact('title', 'data'));
+    }
+
+    public function cetakBarcode(Request $request)
+    {
+        return $request;
     }
 }
 
