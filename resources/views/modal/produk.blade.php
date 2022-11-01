@@ -16,6 +16,11 @@
                             <input type="text" class="input-box" name="total_harga" id="total_harga" readonly>
                             {{-- <script src="{{  }}js/tables.js"></script> --}}
                         </div>
+                        <label for="inputPassword" class="col-sm-2 mt-2 mb col-form-label"></label>
+                        <div class="col-sm-2 mt-3 ml-0">
+                            <input type="text" class="input-box" name="total_beli" id="total_beli" readonly>
+                            {{-- <script src="{{  }}js/tables.js"></script> --}}
+                        </div>
                     </div>
                     <div class="mt-4 mb-4 p-4 row">
                         <label for="nama_produk" class="col-sm-3 col-form-label">Nama Barang</label>

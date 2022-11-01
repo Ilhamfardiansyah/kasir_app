@@ -39,35 +39,41 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/barangbaru', [MasterController::class, 'index'])->name('barangbaru');
 Route::get('/inputbarangbaru', [MasterController::class, 'create'])->name('inputbarangbaru');
-Route::get('/tabletambah', [AddTableController::class, 'create'])->name('tabletambah');
 Route::post('/barangbaru/create', [MasterController::class, 'store']);
-Route::get('/suplaier', [SuplaierController::class, 'index'])->name('suplaier');
-Route::get('/create', [SuplaierController::class, 'create'])->name('inputcreate');
-Route::post('/create/data', [SuplaierController::class, 'store']);
-Route::get('/account', [AccountController::class, 'index'])->name('account');
 Route::get('/update', [MasterController::class, 'cari']);
-Route::post('/updatebarang/{stok}', [UpdateController::class, 'update']);
-Route::get('/size', [SizeController::class, 'index'])->name('size');
-Route::post('/create/size', [SizeController::class, 'store'])->name('size');
-Route::delete('/hapus/{id}', [SizeController::class, 'destroy'])->name('size');
 Route::get('/print', [MasterController::class, 'print']);
 Route::get('/printbulan', [MasterController::class, 'printmonth']);
-Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profile_karyawan');
-Route::get('/dashboard/update/{barcode}', [UpdateController::class, 'cari'])->name('update');
-Route::get('/transaksi', [TransaksiController::class, 'cari'])->name('menu');
-
-Route::post('/kasir-post', [TransaksiController::class, 'store']);
-Route::get('/nguranginStok/{id}/{qty}', [TransaksiController::class, 'nguranginStok']);
-
-Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
 Route::get('/cetak', [MasterController::class, 'index'])->name('barcode');
 Route::post('/cetak-barcode', [MasterController::class, 'cetakBarcode'])->name('cetak_barcode');
 Route::get('/barcode', [MasterController::class, 'barcode']);
 Route::get('/data_rak/{rak:id}', [MasterController::class, 'show']);
+
+Route::get('/tabletambah', [AddTableController::class, 'create'])->name('tabletambah');
+
+Route::get('/suplaier', [SuplaierController::class, 'index'])->name('suplaier');
+Route::get('/create', [SuplaierController::class, 'create'])->name('inputcreate');
+Route::post('/create/data', [SuplaierController::class, 'store']);
+
+Route::get('/account', [AccountController::class, 'index'])->name('account');
+Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profile_karyawan');
+
+Route::post('/updatebarang/{stok}', [UpdateController::class, 'update']);
+Route::get('/dashboard/update/{barcode}', [UpdateController::class, 'cari'])->name('update');
+
+Route::get('/size', [SizeController::class, 'index'])->name('size');
+Route::post('/create/size', [SizeController::class, 'store'])->name('size');
+Route::delete('/hapus/{id}', [SizeController::class, 'destroy'])->name('size');
+
+Route::get('/transaksi', [TransaksiController::class, 'cari'])->name('menu');
+Route::post('/kasir-post', [TransaksiController::class, 'store']);
+Route::get('/nguranginStok/{id}/{qty}', [TransaksiController::class, 'nguranginStok']);
+Route::get('/jadwal', [TransaksiController::class, 'jadwal'])->name('jadwal');
 Route::get('/dashboard/cari', [TransaksiController::class, 'cari'])->name('jadwal');
+
 Route::get('/kategori', [KategoriController::class, 'index'])->name('index');
 Route::post('/create/kategori', [KategoriController::class, 'store'])->name('index');
 Route::get('/kategori', [KategoriController::class, 'index'])->name('index');
+
 Route::get('/rak', [RakController::class, 'index'])->name('index');
 Route::post('/create/rak', [RakController::class, 'store'])->name('store');
 Route::delete('/hapus_rak/{id}', [RakController::class, 'destroy'])->name('size');

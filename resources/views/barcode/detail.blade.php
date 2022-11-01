@@ -8,38 +8,18 @@
         <div class="container-xl">
             <div class="row g-4 mb-4">
                 <div class="col-6 col-lg-12 card">
-                    <div class="app-card app-card-stat shadow-sm h-100">
-                        <button onclick="cetakBarcode('{{ route('cetak_barcode') }}')"
-                            class="btn btn-outline-primary">Button</button>
-                        <form action="" method="post" class="data_rak">
-                            <table id="jadwal" class="display" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">Nama Barang</th>
-                                        <th class="text-center">Kode Barang</th>
-                                        <th class="text-center">Stock</th>
-                                        <th class="text-center">Barcode</th>
-                                        <th class="text-center">Rak</th>
-                                        <th class="text-center">Harga Jual</th>
-                                        <th class="text-center">Harga Beli</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($data as $item)
-                                        <tr>
-                                            <td>{{ $item->nama_produk }}</td>
-                                            <td>{{ $item->kode_produk }}</td>
-                                            <td>{{ $item->stok }}</td>
-                                            <td>{{ $item->barcode }}</td>
-                                            <td>{{ $item->rak_id }}</td>
-                                            <td>{{ $item->harga_jual }}</td>
-                                            <td>{{ $item->harga_beli }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
+                    <table width="100%">
+                        <tr>
+                            @foreach ($data as $item)
+                                <div class="barcode">
+                                    <p class="name">{{ $item->nama_produk }}</p>
+                                    <p class="price">Price: {{ $item->harga_jual }}</p>
+                                    {!! DNS1D::getBarcodeHTML($item->barcode, 'C128', 1.4, 22) !!}
+                                    <p class="pid">{{ $item->kode_produk }}</p>
+                                </div>
+                            @endforeach
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>

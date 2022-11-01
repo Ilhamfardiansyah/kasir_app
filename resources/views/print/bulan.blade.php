@@ -84,6 +84,7 @@
                                 <td>
                                     <h5>HPP</h5><strong>Rp. {{ number_format($keseluruhan - $total_harga) }}</strong>
                                 </td>
+                                <td>{{ $total_barang }}</td>
                             </tbody>
                         </table>
                     </div>

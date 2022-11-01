@@ -12,7 +12,7 @@ use App\Models\Size;
 use App\Models\Kategori;
 use App\Models\Rak;
 use Illuminate\Support\Facades\DB;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MasterController extends Controller
 {
@@ -137,10 +137,11 @@ class MasterController extends Controller
         }else{
             $title = 'Print Invoice';
             $stok = $data->sum('stok');
-            $total = $data->sum('harga_beli');
+            $total = $data->sum('harga_jual');
+            $total_barang = $stok;
             $total_harga = $data->sum('total_harga');
             $keseluruhan = $stok * $total;
-            return view('print.bulan', compact('data', 'title', 'stok', 'total', 'total_harga', 'keseluruhan'));
+            return view('print.bulan', compact('data', 'title', 'stok', 'total', 'total_harga', 'keseluruhan', 'total_barang'));
         }
     }
 
@@ -174,6 +175,8 @@ class MasterController extends Controller
         $data = $rak->produk;
         return view('barcode.detail', compact('title', 'data'));
     }
+
+
 
     public function cetakBarcode(Request $request)
     {
