@@ -75,24 +75,12 @@
                         <div class="col-12 col-lg-12">
                             <div class="app-card app-card-chart h-100 shadow-sm">
                                 <div class="mt-4 mb-4 p-4 row">
-                                    <table class="table table-bordered" style="width:100%">
-                                        <thead>
                                             <tr>
-                                                <th class="text-center">Nama Barang</th>
-                                                <th class="text-center">Kode Barang</th>
-                                                <th class="text-center">Stok Awal</th>
-                                                <th class="text-center">Item Descripton</th>
+                                                <br class="text-center">Nama Barang :{{ $data->nama_produk }}</br>
+                                                <br class="text-center">Kode Barang :{{ $data->kode_produk }}</br>
+                                                <br class="text-center">Stok :{{ $data->stok }}</br>
+                                                <br class="text-center">Tanggal Barang Masuk :{{ $data->created_at }}</br>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">{{ $data->nama_produk }}</td>
-                                                <td class="text-center">{{ $data->kode_produk }}</td>
-                                                <td class="text-center">{{ $data->stok }}</td>
-                                                <td class="text-center">4</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>

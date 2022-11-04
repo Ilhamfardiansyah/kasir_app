@@ -12,7 +12,7 @@ class UpdateController extends Controller
     public function cari($barcode)
     {
         // $data = Post::Where('barcode' , $barcode)->with(['suplaier', 'rak'])->first();
-        $data = Produk::Where('barcode' , $barcode)->first();
+        $data = Produk::Where('barcode' , $barcode)->with(['suplaier', 'rak'])->first();
         if ($data==null) {
             Alert::error('Gagal','Tidak Temukan');
             return back();
