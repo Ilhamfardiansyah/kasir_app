@@ -26,6 +26,7 @@ class CreateProduksTable extends Migration
             $table->string('barcode')->unique();
             $table->string('stok');
             $table->integer('harga_jual');
+            $table->integer('total_jual');
             $table->integer('harga_beli');
             $table->integer('total_harga');
             $table->timestamps();

@@ -9,6 +9,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Tambah Data Size</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="container">
                     <div class="mt-2 mb-2 p-4 row">
                         <label for="inputPassword" class="col-sm-3 mt-2 mb col-form-label">Total</label>
@@ -18,10 +19,11 @@
                         </div>
                         <label for="inputPassword" class="col-sm-2 mt-2 mb col-form-label"></label>
                         <div class="col-sm-2 mt-3 ml-0">
-                            <input type="text" class="input-box" name="total_beli" id="total_beli" readonly>
+                            <input type="text" class="input-box" name="total_jual" id="total_jual" readonly>
                             {{-- <script src="{{  }}js/tables.js"></script> --}}
                         </div>
                     </div>
+
                     <div class="mt-4 mb-4 p-4 row">
                         <label for="nama_produk" class="col-sm-3 col-form-label">Nama Barang</label>
                         <div class="col-sm-9">
@@ -84,6 +86,7 @@
                                 @endforeach
                             </select>
                         </div>
+
                         <label for="harga_jual" class="col-sm-3 mt-2 col-form-label">Harga
                             Jual</label>
                         <div class="col-sm-9 mt-2">
@@ -133,6 +136,7 @@
                                 @endforeach
                             </select>
                         </div>
+
                         <label for="rak_id" class="col-sm-3 mt-2 mb col-form-label">Rak</label>
                         <div class="col-sm-9 mt-2">
                             <select type="input" class="form-select rakValue" aria-label="Default select example"
@@ -146,6 +150,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary btnSaving">Save changes</button>

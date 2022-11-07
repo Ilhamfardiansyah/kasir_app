@@ -18,7 +18,7 @@ class CreateSuplaiersTable extends Migration
             $table->string('nama_supplier');
             $table->string('kode_supplier');
             $table->string('alamat');
-            $table->integer('no_telp');
+            $table->char('no_telp');
             $table->timestamps();
         });
     }

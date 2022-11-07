@@ -173,7 +173,9 @@ class MasterController extends Controller
     {
         $title = 'Cetak Barcode';
         $data = $rak->produk;
-        return view('barcode.detail', compact('title', 'data'));
+        $pdf = PDF::loadview('barcode.detail', compact('title', 'data'));
+        $pdf->setPaper('a4', 'potrait');
+        return $pdf->stream('cetak-barcode.pdf');
     }
 
 
