@@ -56,7 +56,7 @@
             <!--//nav-link-->
         </li>
         <!--//nav-item-->
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
             <a class="nav-link" href="charts.html">
                 <span class="nav-icon">
@@ -70,7 +70,7 @@
             </a>
             <!--//nav-link-->
         </li>
-        <!--//nav-item-->
+        <!--//nav-item--> --}}
 
         <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->

@@ -23,14 +23,21 @@ class UpdateController extends Controller
                     }
             }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $tes = Produk::where('barcode', $request->stok)->first();
-        Produk::where('stok', $request->stok)
-        ->udate([
-            'data' => $tes->stok+$request->stok
+        $rules = [
+            'stok' => 'required',
+        ];
+
+        $validateData = $request->validate($rules);
+        $master = Produk::where('barcode', $request->barcode)->first()->stok;
+        Produk::where('barcode', $request->barcode)
+        ->update([
+            'stok' => $master - $request->stok,
         ]);
+
         return back();
     }
 
-            }
+
+}

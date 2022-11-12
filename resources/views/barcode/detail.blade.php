@@ -23,6 +23,9 @@
                 height="60">
                 <br>
                 {{ $item->kode_produk }} - Rp. {{ number_format($item->harga_jual) }}
+                @if ($no++ % 3 ==0)
+                    <tr></tr>
+                @endif
             </td>
             @endforeach
         </tr>

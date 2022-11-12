@@ -78,8 +78,8 @@
                                 <th class="text-center">Harga Jual</th>
                             </tr>
                         </thead>
-                        @foreach ($produk as $produks)
-                            <tbody>
+                        <tbody>
+                                @foreach ($produk as $produks)
                                 <tr>
                                     <td>{{ $produks->kode_produk }}</td>
                                     <td>{{ $produks->nama_produk }}</td>
@@ -87,8 +87,8 @@
                                     <td>{{ $produks->stok }}</td>
                                     <td>{{ number_format($produks->harga_jual, 0, ',', '.') }}</td>
                                 </tr>
+                                @endforeach
                             </tbody>
-                        @endforeach
                         <tfoot>
                             <tr>
                                 <th class="text-center">Kode Produk</th>

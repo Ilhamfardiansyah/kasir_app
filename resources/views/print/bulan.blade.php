@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <div class="container">
             <div class="row">
+                <div class="card">
                 <div class="span4">
                     <img src="{{ asset('assets/images/background/bakas.png') }}" class="img-rounded logo" width="400px">
                     <address>
@@ -51,6 +52,7 @@
                                     <th>Nama Supplier</th>
                                     <th>Kode Supplier</th>
                                     <th>Harga Jual</th>
+                                    <th>Total Jual</th>
                                     <th>Harga Beli</th>
                                     <th>Total Harga Beli</th>
                                 </tr>
@@ -65,6 +67,7 @@
                                         <td>{{ $item->suplaier->nama_supplier }}</td>
                                         <td>{{ $item->suplaier->kode_supplier }}</td>
                                         <td>Rp. {{ number_format($item->harga_jual, 0, ',', '.') }}</td>
+                                        <td>Rp. {{ number_format($item->total_jual, 0, ',', '.') }}</td>
                                         <td>Rp. {{ number_format($item->harga_beli, 0, ',', '.') }}</td>
                                         <td>Rp. {{ number_format($item->total_harga, 0, ',', '.') }}</td>
                                     </tr>
@@ -73,18 +76,17 @@
                             <td colspan="4"></td>
                         </tr> --}}
                                 <tr>
-                                    <td colspan="7">&nbsp;</td>
+                                    <td colspan="8">&nbsp;</td>
                                     <td><strong>Total</strong></td>
                                     <td><strong>Rp. {{ number_format($total_harga, 0, ',', '.') }}</strong>
                                     </td>
                                 </tr>
                                 <td>
-                                    <h5>Laba Kotor</h5><strong>Rp. {{ number_format($keseluruhan) }}</strong>
+                                    <h5>Laba Kotor</h5><strong>Rp. {{ number_format($total) }}</strong>
                                 </td>
                                 <td>
-                                    <h5>HPP</h5><strong>Rp. {{ number_format($keseluruhan - $total_harga) }}</strong>
+                                    <h5>HPP</h5><strong>Rp. {{ number_format($total - $total_harga) }}</strong>
                                 </td>
-                                <td>{{ $total_barang }}</td>
                             </tbody>
                         </table>
                     </div>
@@ -124,6 +126,7 @@
                     <strong>Email:</strong> <a> {{ Auth::user()->email }}</a>
                 </div>
             </div>
+        </div>
         </div>
     </body>
     <script>

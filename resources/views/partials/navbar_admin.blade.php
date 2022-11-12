@@ -100,9 +100,9 @@
             </div>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ url('/stokopname') }}">
                 <span class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-list-stars" viewBox="0 0 16 16">
@@ -115,7 +115,7 @@
                 <span class="nav-link-text">Stock Opname</span>
             </a>
             <!--//nav-link-->
-        </li>
+        </li> --}}
 
         <!--//nav-item-->
         <li class="nav-item has-submenu">
@@ -271,7 +271,7 @@
             </div>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
             <a class="nav-link" href="charts.html">
                 <span class="nav-icon">
@@ -284,7 +284,7 @@
                 <span class="nav-link-text">Charts</span>
             </a>
             <!--//nav-link-->
-        </li>
+        </li> --}}
         <!--//nav-item-->
 
         <li class="nav-item">

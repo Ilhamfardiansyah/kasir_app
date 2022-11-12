@@ -11,7 +11,9 @@ use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RakController;
+use App\Http\Controllers\SoController;
 use App\Models\Rak;
+
 
 
 /*
@@ -57,7 +59,7 @@ Route::post('/create/data', [SuplaierController::class, 'store']);
 Route::get('/account', [AccountController::class, 'index'])->name('account');
 Route::get('/profile_karyawan', [AccountController::class, 'view'])->name('profile_karyawan');
 
-Route::post('/updatebarang/{stok}', [UpdateController::class, 'update']);
+Route::post('/updatebarang/{id}', [UpdateController::class, 'update']);
 Route::get('/dashboard/update/{barcode}', [UpdateController::class, 'cari'])->name('update');
 
 Route::get('/size', [SizeController::class, 'index'])->name('size');
@@ -77,6 +79,9 @@ Route::get('/kategori', [KategoriController::class, 'index'])->name('index');
 Route::get('/rak', [RakController::class, 'index'])->name('index');
 Route::post('/create/rak', [RakController::class, 'store'])->name('store');
 Route::delete('/hapus_rak/{id}', [RakController::class, 'destroy'])->name('size');
+
+Route::get('/stokopname', [SoController::class, 'index'])->name('stokupname');
+
 
 
 

@@ -3,6 +3,7 @@
     @section('content')
         <form action="/updatebarang/{{ $data->id }}" method="post">
             @csrf
+            {{-- <input type="hidden" value="{{ $data->barcode }}" name="barcode_new"> --}}
             <div class="app-content pt-3 p-md-3 p-lg-4">
                 <div class="container-xl">
                     <h1 class="app-page-title">Input Barcode</h1>
@@ -20,7 +21,7 @@
                                     <label for="barcode" class="col-sm-3 col-form-label">Barcode</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control @error('barcode') is-invalid @enderror"
-                                            name="barcode" id="barcode" value="{{ old('barcode') }}" autocomplete="off"
+                                            name="barcode" id="barcode" value="{{ $data->barcode }}" autocomplete="off"
                                             placeholder="Masukan Barcode" autofocus>
                                         @error('barcode')
                                             <div class="invalid-feedback">

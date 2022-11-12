@@ -47,6 +47,7 @@ class MasterController extends Controller
     }
 
     public function store(Request $request){
+        // dd($request->all());
         $validateData = $request->validate([
             'nama_produk' => 'required',
             'suplaier_id' => 'required',
@@ -56,10 +57,13 @@ class MasterController extends Controller
             'stok' => 'required',
             'harga_jual' => 'required',
             'harga_beli' => 'required',
+            'total_harga' => 'required',
+            'total_jual' => 'required',
             'size_id' => 'required',
             'kategori_id' => 'required',
             'rak_id' => 'required', //disini am errornya rak_id gada, sedangkan lu setnya harus terisi, di vienya jek? iyaa
         ]);
+        // dd($request->total_jual);
 
         $nama_produk = $request->nama_produk;
         $suplaier_id = $request->suplaier_id;
@@ -71,6 +75,7 @@ class MasterController extends Controller
         $stok = $request->stok;
         $harga_jual = $request->harga_jual;
         $harga_beli = $request->harga_beli;
+        // $total_harga = $request->total_harga;
         $size_id = $request->size_id;
         $kategori_id = $request->kategori_id;
         $rak_id = $request->rak_id;
@@ -78,6 +83,7 @@ class MasterController extends Controller
         $data = $request->created_at;
         $nama_suplaier = Suplaier::where('id', $suplaier_id)->first()->value('nama_supplier');
         $total_harga = (int) $stok * (int) $harga_beli;
+        $total_jual = (int) $stok * (int) $harga_jual;
 
         Produk::create([
             'nama_produk' => $nama_produk,
@@ -90,6 +96,7 @@ class MasterController extends Controller
             'harga_jual' => $harga_jual,
             'harga_beli' => $harga_beli,
             'total_harga'=> $total_harga,
+            'total_jual' =>$total_jual,
             'size_id' => $size_id,
             'kategori_id' => $kategori_id,
             'rak_id' => $rak_id
@@ -137,11 +144,11 @@ class MasterController extends Controller
         }else{
             $title = 'Print Invoice';
             $stok = $data->sum('stok');
-            $total = $data->sum('harga_jual');
+            $total = $data->sum('total_jual');
             $total_barang = $stok;
             $total_harga = $data->sum('total_harga');
-            $keseluruhan = $stok * $total;
-            return view('print.bulan', compact('data', 'title', 'stok', 'total', 'total_harga', 'keseluruhan', 'total_barang'));
+            $persen = round($total/$total_harga*100 , 2);
+            return view('print.bulan', compact('data', 'title', 'stok', 'total', 'total_harga', 'persen', 'total_barang'));
         }
     }
 
@@ -173,7 +180,8 @@ class MasterController extends Controller
     {
         $title = 'Cetak Barcode';
         $data = $rak->produk;
-        $pdf = PDF::loadview('barcode.detail', compact('title', 'data'));
+        $no = 1;
+        $pdf = PDF::loadview('barcode.detail', compact('title', 'data', 'no'));
         $pdf->setPaper('a4', 'potrait');
         return $pdf->stream('cetak-barcode.pdf');
     }
