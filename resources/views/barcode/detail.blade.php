@@ -17,7 +17,8 @@
         <tr>
             @foreach ($data as $item)
             <td class="text-center" style="border: 1px solid">
-                <p>{{ $item->nama_produk }} Size {{ $item->size->nama }} {{ $item->rak->nama }}</p>
+                <br>{{ $item->nama_produk }} Size {{ $item->size->nama }} {{ $item->rak->nama }}</>
+                <br>{{ date('d.m.Y', strtotime($item->created_at)) }}
                 <img src="data:image/png;base64, {{ DNS1D::getBarcodePNG($item->barcode, 'C39') }}" alt="{{ $item->barcode }}"
                 width="180"
                 height="60">

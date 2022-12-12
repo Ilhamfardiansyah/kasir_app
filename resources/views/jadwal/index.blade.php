@@ -14,23 +14,25 @@
                                 <tr>
                                     <th class="text-center">Nama Barang</th>
                                     <th class="text-center">Kode Barang</th>
+                                    <th class="text-center">Rak</th>
                                     <th class="text-center">Stock</th>
                                     <th class="text-center">Barcode</th>
                                     <th class="text-center">Harga Jual</th>
-                                    <th class="text-center">Harga Beli</th>
+                                    <th class="text-center">Tanggal Masuk</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $item)
                                     <tr>
-                                        <td>{{ $item->nama_produk }}</td>
+                                        <td>{{ $item->nama_produk }} Size {{ $item->size->nama }}</td>
                                         <td>{{ $item->kode_produk }}</td>
+                                        <td>{{ $item->rak->nama }}</td>
                                         <td>{{ $item->stok }}</td>
                                         <td>{{ $item->barcode }}</td>
-                                        <td>{{ $item->harga_jual }}</td>
-                                        <td>{{ $item->harga_beli }}</td>
+                                        <td>Rp. {{ number_format($item->harga_jual) }}</td>
+                                        <td>{{ $item->created_at }}</td>
                                     </tr>
-                                @endforeach
+                                    @endforeach
                             </tbody>
                         </table>
                     </div>

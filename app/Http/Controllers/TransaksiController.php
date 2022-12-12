@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
+use App\Models\Rak;
+use App\Models\Size;
+use App\Models\Produk;
+use App\Models\Suplaier;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\Produk;
 use Illuminate\Support\Facades\DB;
-use App\Models\Suplaier;
 use Illuminate\Support\Facades\Auth;
-use Alert;
 
 class TransaksiController extends Controller
 {
@@ -18,9 +20,11 @@ class TransaksiController extends Controller
         return view('transaksi.index', compact('data', 'title'));
     }
     public function jadwal(){
-        $data = Produk::orderBY('updated_at', 'asc')->skip(0)->take(10)->get();
+        $data = Produk::orderBY('created_at', 'asc')->skip(0)->take(10)->get();
         $title = 'Jadwal Penjualan';
-        return view('jadwal.index', compact('data', 'title'));
+        $rak = Rak::all();
+        $size = Size::all();
+        return view('jadwal.index', compact('data', 'title', 'rak', 'size'));
     }
 
     function nguranginStok($id, $qty){

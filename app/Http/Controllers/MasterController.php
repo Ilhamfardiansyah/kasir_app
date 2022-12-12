@@ -158,18 +158,6 @@ class MasterController extends Controller
         ]);
     }
 
-    // public function update(Request $request){
-    //    $tes = Produk::where('stok', $request->stok)->first();
-    //     // dd($tes->stok+$request->stok);
-    //            Produk::where('stok', $request->stok)
-    //         ->update([
-    //             'stok' => $tes->stok+$request->stok,
-    //         ]);
-    //             return back();
-    // }
-
-
-
     public function barcode(){
         $data = Produk::with(['rak', 'kategori'])->get();
         $title = 'Print Barcode';

@@ -29,8 +29,8 @@
                                         <td>{{ $item->stok }}</td>
                                         <td>{{ $item->barcode }}</td>
                                         <td><a href="/data_rak/{{ $item->rak->id }}">{{ $item->rak->nama }}</a></td>
-                                        <td>{{ $item->harga_jual }}</td>
-                                        <td>{{ $item->harga_beli }}</td>
+                                        <td>Rp.{{ number_format($item->harga_jual) }}</td>
+                                        <td>Rp.{{ number_format($item->harga_beli) }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

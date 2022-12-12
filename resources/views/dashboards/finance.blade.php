@@ -77,6 +77,7 @@
                                     <th class="text-center">Barcode</th>
                                     <th class="text-center">Stok</th>
                                     <th class="text-center">Harga Jual</th>
+                                    <th class="text-center">Tanggal Masuk</th>
                                 </tr>
                             </thead>
                             @foreach ($produk as $produks)
@@ -87,6 +88,7 @@
                                         <td>{{ $produks->barcode }}</td>
                                         <td>{{ $produks->stok }}</td>
                                         <td>{{ number_format($produks->harga_jual, 0, ',', '.') }}</td>
+                                        <td>{{ $produks->created_at }}</td>
                                     </tr>
                                 </tbody>
                             @endforeach
@@ -97,6 +99,7 @@
                                     <th class="text-center">Barcode</th>
                                     <th class="text-center">Stok</th>
                                     <th class="text-center">Harga Jual</th>
+                                    <th class="text-center">Tanggal Masuk</th>
                                 </tr>
                             </tfoot>
                         </table>

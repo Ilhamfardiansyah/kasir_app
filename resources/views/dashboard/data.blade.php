@@ -62,9 +62,19 @@
                                         <input type="text"
                                             class="form-control @error('total_harga') is-invalid @enderror"
                                             name="total_harga" id="total_harga"
-                                            value="{{ number_format($data->total_harga, 0, ',', '.') }}" autocomplete="off"
-                                            readonly>
+                                            value="Rp {{ number_format($data->total_harga, 0, ',', '.') }}"
+                                            autocomplete="off" readonly>
                                         @error('total_harga')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                        <div class="mt-0 mb-4"></div>
+                                        <input type="text" class="form-control @error('harga_beli') is-invalid @enderror"
+                                            name="harga_beli" id="harga_beli"
+                                            value="Rp {{ number_format($data->harga_beli, 0, ',', '.') }}"
+                                            autocomplete="off" readonly>
+                                        @error('harga_beli')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -76,12 +86,25 @@
                         <div class="col-12 col-lg-12">
                             <div class="app-card app-card-chart h-100 shadow-sm">
                                 <div class="mt-4 mb-4 p-4 row">
+                                    <table class="table table-bordered" style="width:100%">
+                                        <thead>
                                             <tr>
-                                                <br class="text-center">Nama Barang :{{ $data->nama_produk }}</br>
-                                                <br class="text-center">Kode Barang :{{ $data->kode_produk }}</br>
-                                                <br class="text-center">Stok :{{ $data->stok }}</br>
-                                                <br class="text-center">Tanggal Barang Masuk :{{ $data->created_at }}</br>
+                                                <th class="text-center">Nama Barang</th>
+                                                <th class="text-center">Kode Barang</th>
+                                                <th class="text-center">Stok Awal</th>
+                                                <th class="text-center">Item Descripton</th>
                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"> {{ $data->nama_produk }} </td>
+                                                <td class="text-center"> {{ $data->kode_produk }} </td>
+                                                <td class="text-center"> {{ $data->stok }} </td>
+                                                <td class="text-center"><b> {{ $data->kategori->nama }}, Size
+                                                        {{ $data->size->nama }}, {{ $data->rak->nama }} </b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
