@@ -46,7 +46,7 @@
                         <div class="app-card-header p-3">
                             <div class="row justify-content-between align-items-center">
                                 <div class="col-auto">
-                                    <h4 class="app-card-title">Tambah Produk Dari Supplier</h4>
+                                    <h4 class="app-card-title">TRANSAKSI BARANG KELUAR</h4>
                                 </div>
                             </div>
                             <div>
